@@ -1,0 +1,9 @@
+// Vitest Snapshot v1
+
+exports[`App.jsx > shoudl render without any errors 1`] = `
+<DocumentFragment>
+  <div>
+    Rankiq hello
+  </div>
+</DocumentFragment>
+`;
