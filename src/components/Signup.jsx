@@ -233,7 +233,14 @@ function SignUp() {
               <Divider>OR</Divider>
             </Grid>
             <Grid item xs={12}>
-              <Button size="large" variant="contained" fullWidth type="submit">
+              <Button
+                size="large"
+                variant="contained"
+                fullWidth
+                onClick={() => {
+                  navigate('/dashboard');
+                }}
+              >
                 Continue as Guest
               </Button>
             </Grid>
