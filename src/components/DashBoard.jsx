@@ -1,4 +1,5 @@
-import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useForm, Controller } from 'react-hook-form';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -7,8 +8,10 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { isEmpty } from 'lodash';
 import Autocomplete from '@mui/material/Autocomplete';
-// services
+import Alert from '@mui/material/Alert';
+import { useNavigate } from 'react-router-dom';
 import { saveExamData } from '../ducks/examInfo';
+import { authDataSelector, examInfoSelector } from '../selectors';
 import { EXAM_CATEGORY, EXAM_RESERVATION, EXAM_ZONES } from '../constants/exam';
 import { ERROR_MESSAGE } from '../constants';
 
@@ -16,6 +19,7 @@ function DashBoard() {
   const dispatch = useDispatch();
   const {
     handleSubmit,
+    getValues,
     reset,
     formState: { errors },
     control,
@@ -23,16 +27,33 @@ function DashBoard() {
     mode: 'onChange',
     defaultValues: { zone: '', reservation: '', category: '', examUrl: '' },
   });
+  const navigate = useNavigate();
+  const [showError, setShowError] = useState(false);
+  const { error: examError, loading } = useSelector(examInfoSelector);
+  const { userInfo = {} } = useSelector(authDataSelector);
 
-  const onSubmit = (data) => {
-    console.info('data ', data);
+  const handleSaveData = async () => {
+    setShowError(false);
+    if (isEmpty(errors)) {
+      const { category, zone, reservation, examUrl } = getValues();
+      const dataToSubmit = {
+        examUrl,
+        category: category.value,
+        reservation: reservation.value,
+        zone: zone.value,
+        userId: userInfo?.email || null,
+      };
+      try {
+        await dispatch(saveExamData(dataToSubmit)).unwrap();
+        navigate('/result');
+      } catch (e) {
+        setShowError(true);
+      }
+    }
   };
 
-  // const handleSaveData = (data) => {
-  //   console.info(dispatch(saveExamData(data)));
-  // };
-
   const handleReset = () => {
+    setShowError(false);
     reset();
   };
 
@@ -205,8 +226,8 @@ function DashBoard() {
                     size="large"
                     variant="contained"
                     fullWidth
-                    disabled={!isEmpty(errors)}
-                    onClick={handleSubmit(onSubmit)}
+                    disabled={!isEmpty(errors) || loading}
+                    onClick={handleSubmit(handleSaveData)}
                   >
                     Submit
                   </Button>
@@ -221,6 +242,11 @@ function DashBoard() {
                     Reset
                   </Button>
                 </Grid>
+                {!isEmpty(examError) && showError && (
+                  <Grid item xs={12}>
+                    <Alert severity="error">{examError}</Alert>
+                  </Grid>
+                )}
               </Grid>
             </form>
           </Card>

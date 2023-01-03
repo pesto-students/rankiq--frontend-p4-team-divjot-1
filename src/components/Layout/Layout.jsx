@@ -3,11 +3,12 @@ import { ThemeProvider } from '@mui/material/styles';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import theme from '../../theme/theme';
 import NavBar from './Navbar';
-import Footer from './Footer';
+import Footer from './Footer.1';
 import Login from '../Login';
 import SignUp from '../Signup';
 import UserHistory from '../UserHistory';
 import DashBoard from '../DashBoard';
+import Result from '../Result';
 import ProtectedRoute from '../../routing/ProtectedRoute';
 
 // const themeOptions = {
@@ -43,6 +44,7 @@ function Layout() {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/dashboard" element={<DashBoard />} />
+              <Route path="/result" element={<Result />} />
               <Route element={<ProtectedRoute />}>
                 <Route path="/userHistory" element={<UserHistory />} />
               </Route>

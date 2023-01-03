@@ -1,4 +1,4 @@
-export const SERVER_BASE_API = 'https://rankiq-server.onrender.com/';
+export const SERVER_BASE_API = 'http://localhost:4000/';
 
 export const USER_API = {
   LOGIN: 'user/signin',
@@ -7,4 +7,8 @@ export const USER_API = {
 
 export const CONTENT_API = {
   GET_CONTENT: 'content/getContent?requestUrl=',
+};
+
+export const EXAM_API = {
+  LOG_MARKS: 'exam/logMarks',
 };

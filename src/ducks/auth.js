@@ -5,9 +5,13 @@ const accessToken = localStorage.getItem('accessToken')
   ? localStorage.getItem('accessToken')
   : null;
 
+const userInfo = localStorage.getItem('userInfo')
+  ? JSON.parse(localStorage.getItem('userInfo'))
+  : {};
+
 const initialState = {
   loading: false,
-  userInfo: {},
+  userInfo,
   accessToken,
   error: null,
   success: false,
@@ -31,8 +35,9 @@ export const signInUser = createAsyncThunk(
       err.status = res.status;
       throw err;
     }
-
+    const { accessToken: token, ...dataToLog } = responseData;
     localStorage.setItem('accessToken', responseData.accessToken);
+    localStorage.setItem('userInfo', JSON.stringify(dataToLog));
     return responseData;
   }
 );
@@ -66,6 +71,7 @@ const authDataSlice = createSlice({
   reducers: {
     logout() {
       localStorage.removeItem('accessToken');
+      localStorage.removeItem('userInfo');
       const stateToReturn = { ...initialState, accessToken: null };
       return stateToReturn;
     },
