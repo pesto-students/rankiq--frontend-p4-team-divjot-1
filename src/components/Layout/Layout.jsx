@@ -34,7 +34,7 @@ function Layout() {
           <main
             id="content"
             style={{
-              height: 'calc(100% - 90px)',
+              minHeight: 'calc(100vh - 130px)',
               overflowY: 'auto',
               marginTop: '90px',
               paddingInline: '24px',
