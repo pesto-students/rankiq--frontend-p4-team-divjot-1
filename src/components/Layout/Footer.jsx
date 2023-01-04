@@ -22,6 +22,9 @@ function Footer() {
           backgroundColor: 'primary.main',
           color: 'text.navFooter',
           height: '40px',
+          [theme.breakpoints.down('md')]: {
+            height: 'auto',
+          },
         }}
       >
         <Grid
