@@ -3,7 +3,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import theme from '../../theme/theme';
 import NavBar from './Navbar';
-import Footer from './Footer.1';
+import Footer from './Footer';
 import Login from '../Login';
 import SignUp from '../Signup';
 import UserHistory from '../UserHistory';
