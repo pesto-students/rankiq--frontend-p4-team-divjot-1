@@ -33,26 +33,30 @@ function Layout() {
       <BrowserRouter>
         <Box>
           <NavBar />
-          <main
-            id="content"
-            style={{
-              minHeight: 'calc(100vh - 130px)',
-              overflowY: 'auto',
-              marginTop: '90px',
-              paddingInline: '24px',
-            }}
-          >
-            <Routes>
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<SignUp />} />
-              <Route path="/dashboard" element={<DashBoard />} />
-              <Route path="/result" element={<Result />} />
-              <Route path="/faqs" element={<FAQsCmp />} />
-              <Route element={<ProtectedRoute />}>
-                <Route path="/userHistory" element={<UserHistory />} />
-              </Route>
-            </Routes>
+          <main>
+            <Box
+              id="content"
+              sx={{
+                minHeight: 'calc(100vh - 6rem)',
+                overflowY: 'auto',
+                marginTop: { xs: '3.5rem', sm: '4rem' },
+                display: 'flex',
+                alignItems: 'center',
+              }}
+            >
+              <Routes>
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<SignUp />} />
+                <Route path="/dashboard" element={<DashBoard />} />
+                <Route path="/result" element={<Result />} />
+                <Route path="/faqs" element={<FAQsCmp />} />
+                <Route element={<ProtectedRoute />}>
+                  <Route path="/userHistory" element={<UserHistory />} />
+                </Route>
+              </Routes>
+            </Box>
           </main>
+
           <Footer />
         </Box>
       </BrowserRouter>

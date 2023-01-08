@@ -11,6 +11,7 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Autocomplete from '@mui/material/Autocomplete';
 import Alert from '@mui/material/Alert';
+import Container from '@mui/material/Container';
 // services
 import { isEmpty } from 'lodash';
 import { saveExamData } from '../ducks/examInfo';
@@ -62,7 +63,7 @@ function DashBoard() {
   };
 
   return (
-    <div>
+    <Container maxWidth="xl">
       <Grid
         container
         spacing={{ xs: 2, md: 3 }}
@@ -258,7 +259,7 @@ function DashBoard() {
           </Card>
         </Grid>
       </Grid>
-    </div>
+    </Container>
   );
 }
 

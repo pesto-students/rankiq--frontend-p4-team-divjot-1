@@ -76,9 +76,9 @@ function Login() {
   return (
     <Container maxWidth="sm">
       <StyledBox
-        sx={{ padding: { xs: '2rem 1rem', sm: '2rem' } }}
-        mt={{ xs: '5rem', sm: '9rem' }}
-        mb={{ xs: '1rem', sm: '5rem' }}
+        sx={{
+          padding: { xs: '2rem 1rem', sm: '2rem' },
+        }}
       >
         <form>
           <Grid container spacing={4}>
