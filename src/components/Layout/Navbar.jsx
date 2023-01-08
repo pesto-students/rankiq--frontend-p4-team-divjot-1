@@ -1,4 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+// mui
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
@@ -13,11 +17,12 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import Switch from '@mui/material/Switch';
+import Stack from '@mui/material/Stack';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// services
 import { isEmpty } from 'lodash';
 import { accessTokenSelector } from '../../selectors';
 import { logout } from '../../ducks/auth';
@@ -26,11 +31,19 @@ const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
 
 function NavBar() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [anchorEl, setAnchorEl] = useState(null);
-  const accessToken = useSelector(accessTokenSelector);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { t, i18n } = useTranslation();
+  const accessToken = useSelector(accessTokenSelector);
+
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [isEnglish, setIsEnglish] = useState(true);
+
+  useEffect(() => {
+    const language = isEnglish ? 'en' : 'hi';
+    i18n.changeLanguage(language);
+  }, [i18n, isEnglish]);
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -47,6 +60,10 @@ function NavBar() {
   const handleLogout = () => {
     dispatch(logout());
     navigate('/login');
+  };
+
+  const handleLanguageChange = (event) => {
+    setIsEnglish(event.target.checked);
   };
 
   const drawer = (
@@ -104,8 +121,31 @@ function NavBar() {
               RankIQ
             </Typography>
           </Box>
-
+          <Box sx={{ display: { xs: 'flex', sm: 'none' } }}>
+            <Stack direction="row" alignItems="center">
+              <Typography>{t('languages.hi')}</Typography>
+              <Switch
+                color="default"
+                value={isEnglish}
+                defaultChecked
+                onChange={handleLanguageChange}
+                inputProps={{ 'aria-label': 'controlled' }}
+              />
+              <Typography>{t('languages.en')}</Typography>
+            </Stack>
+          </Box>
           <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
+            <Stack direction="row" alignItems="center" sx={{ mr: '10px' }}>
+              <Typography>{t('languages.hi')}</Typography>
+              <Switch
+                color="default"
+                value={isEnglish}
+                defaultChecked
+                onChange={handleLanguageChange}
+                inputProps={{ 'aria-label': 'controlled' }}
+              />
+              <Typography>{t('languages.en')}</Typography>
+            </Stack>
             {navItems.map((item) => (
               <Button key={item} sx={{ color: '#fff' }}>
                 {item}

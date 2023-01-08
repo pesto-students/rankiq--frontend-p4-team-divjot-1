@@ -1,21 +1,25 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm, Controller } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
+// cmp
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import { isEmpty } from 'lodash';
 import Autocomplete from '@mui/material/Autocomplete';
 import Alert from '@mui/material/Alert';
-import { useNavigate } from 'react-router-dom';
+// services
+import { isEmpty } from 'lodash';
 import { saveExamData } from '../ducks/examInfo';
 import { authDataSelector, examInfoSelector } from '../selectors';
 import { EXAM_CATEGORY, EXAM_RESERVATION, EXAM_ZONES } from '../constants/exam';
 import { ERROR_MESSAGE } from '../constants';
 
 function DashBoard() {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const {
     handleSubmit,
@@ -71,7 +75,9 @@ function DashBoard() {
               mt: '1rem',
               mb: { xs: '1rem', sm: '3rem' },
             }}
-          />
+          >
+            <h2>{t('app.test')}</h2>
+          </Card>
         </Grid>
         <Grid item xs={4} sm={6} md={6}>
           <Card
