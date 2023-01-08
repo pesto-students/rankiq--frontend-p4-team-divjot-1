@@ -20,5 +20,6 @@ module.exports = {
     'no-case-declarations': 0,
     'react/jsx-props-no-spreading': 0,
     'no-param-reassign': 0,
+    'react-hooks/exhaustive-deps': 0,
   },
 };

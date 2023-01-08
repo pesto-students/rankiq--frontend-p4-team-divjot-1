@@ -7,3 +7,7 @@ export const accessTokenSelector = createSelector(
   authDataSelector,
   (authData) => get(authData, 'accessToken', null)
 );
+
+export const userNameSelector = createSelector(authDataSelector, (authData) =>
+  get(authData, 'userInfo.firstName', '')
+);

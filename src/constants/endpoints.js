@@ -11,4 +11,6 @@ export const CONTENT_API = {
 
 export const EXAM_API = {
   LOG_MARKS: 'exam/logMarks',
+  RANK: 'exam/checkRank',
+  HISTORY: 'exam/userExamHistory',
 };
