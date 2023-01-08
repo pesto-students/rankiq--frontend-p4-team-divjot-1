@@ -75,6 +75,7 @@ function DashBoard() {
               padding: { xs: '2rem 1rem', sm: '2rem' },
               mt: '1rem',
               mb: { xs: '1rem', sm: '3rem' },
+              display: { xs: 'none', sm: 'block' },
             }}
           >
             <h2>{t('app.test')}</h2>

@@ -11,43 +11,52 @@ const InitialState = {
 export const saveExamData = createAsyncThunk(
   'examInfo/saveExamData',
   async (data) => {
-    const { examUrl, reservation, category, zone, userId } = data;
+    const {
+      examUrl,
+      reservation,
+      category,
+      zone,
+      userId,
+      saveData = true,
+    } = data;
     const examData = await getExamDetailsFromHtml(examUrl);
     const {
       primaryDetails: { rollNumber, name, subject, date, time },
       sectionDetails,
     } = examData;
+    if (saveData) {
+      const reqObj = {
+        rollNumber,
+        name,
+        subject,
+        shift: time,
+        date,
+        mark: sectionDetails[0]?.sectionMarks,
+        caste: category,
+        reservation,
+        zone,
+        url: examUrl,
+        userId,
+      };
 
-    const reqObj = {
-      rollNumber,
-      name,
-      subject,
-      shift: time,
-      date,
-      mark: sectionDetails[0]?.sectionMarks,
-      caste: category,
-      reservation,
-      zone,
-      url: examUrl,
-      userId,
-    };
+      const res = await fetch(`${SERVER_BASE_API}${EXAM_API.LOG_MARKS}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(reqObj),
+      });
+      const responseData = await res.json();
 
-    const res = await fetch(`${SERVER_BASE_API}${EXAM_API.LOG_MARKS}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(reqObj),
-    });
-    const responseData = await res.json();
-
-    if (!res.ok) {
-      const { message = '' } = responseData;
-      const err = new Error(message || res);
-      err.response = res;
-      err.status = res.status;
-      throw err;
+      if (!res.ok) {
+        const { message = '' } = responseData;
+        const err = new Error(message || res);
+        err.response = res;
+        err.status = res.status;
+        throw err;
+      }
     }
+
     return examData;
   }
 );
