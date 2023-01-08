@@ -9,7 +9,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import store from './createStore';
-import './ducks/i18n';
+import './services/i18n';
 
 library.add(fas, faRankingStar);
 

@@ -33,7 +33,7 @@ const navItems = ['Home', 'About', 'Contact'];
 function NavBar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const accessToken = useSelector(accessTokenSelector);
 
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -123,26 +123,28 @@ function NavBar() {
           </Box>
           <Box sx={{ display: { xs: 'flex', sm: 'none' } }}>
             <Stack direction="row" alignItems="center">
-              <Typography>Hindi</Typography>
+              <Typography>{t('languages.hi')}</Typography>
               <Switch
                 color="default"
                 value={isEnglish}
+                defaultChecked
                 onChange={handleLanguageChange}
                 inputProps={{ 'aria-label': 'controlled' }}
               />
-              <Typography>English</Typography>
+              <Typography>{t('languages.en')}</Typography>
             </Stack>
           </Box>
           <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
             <Stack direction="row" alignItems="center" sx={{ mr: '10px' }}>
-              <Typography>Hindi</Typography>
+              <Typography>{t('languages.hi')}</Typography>
               <Switch
                 color="default"
                 value={isEnglish}
+                defaultChecked
                 onChange={handleLanguageChange}
                 inputProps={{ 'aria-label': 'controlled' }}
               />
-              <Typography>English</Typography>
+              <Typography>{t('languages.en')}</Typography>
             </Stack>
             {navItems.map((item) => (
               <Button key={item} sx={{ color: '#fff' }}>

@@ -79,19 +79,39 @@ function Footer() {
                 },
               }}
             >
-              <Button component={Link} sx={{ color: '#fff' }}>
+              <Button
+                component={Link}
+                href="https://www.facebook.com/RankiQ.in"
+                sx={{ color: '#fff' }}
+              >
                 <FacebookIcon />
               </Button>
-              <Button component={Link} sx={{ color: '#fff' }}>
+              <Button
+                component={Link}
+                href="https://www.instagram.com/rankiq.in/?hl=en"
+                sx={{ color: '#fff' }}
+              >
                 <InstagramIcon />
               </Button>
-              <Button component={Link} sx={{ color: '#fff' }}>
+              <Button
+                component={Link}
+                href="https://www.youtube.com/channel/UCK-34bq-b4OrbOJ9t4lEhsg"
+                sx={{ color: '#fff' }}
+              >
                 <YoutubeIcon />
               </Button>
-              <Button component={Link} sx={{ color: '#fff' }}>
+              <Button
+                component={Link}
+                href="https://telegram.me/RankiQ"
+                sx={{ color: '#fff' }}
+              >
                 <TelegramIcon />
               </Button>
-              <Button component={Link} sx={{ color: '#fff' }}>
+              <Button
+                component={Link}
+                href="https://twitter.com/RankiQ_in"
+                sx={{ color: '#fff' }}
+              >
                 <TwitterIcon />
               </Button>
             </Box>
