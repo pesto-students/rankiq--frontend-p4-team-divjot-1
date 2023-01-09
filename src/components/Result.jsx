@@ -172,6 +172,7 @@ function Result() {
                 </Typography>
                 <Chart
                   id="unAnsweredCount"
+                  negative
                   val={100 - (correctCount + incorrectCount)}
                   maxVal={100}
                 />
