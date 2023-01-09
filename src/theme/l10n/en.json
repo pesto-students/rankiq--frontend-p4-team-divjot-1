@@ -16,6 +16,14 @@
 		"hi": "हिंदी",
 		"en": "English"
 	},
+	"contactUs": {
+		"pageTitle": "Contact Us",
+		"fName": "First Name",
+		"lName": "Last Name",
+		"emailId": "Email Id",
+		"subject": "Subject",
+		"feedback": "Your Message"
+	},
 	"FAQs": [
 		{
 			"que": "Why my rank is changing each time I refresh the page?",
