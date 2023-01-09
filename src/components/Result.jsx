@@ -144,7 +144,7 @@ function Result() {
             <Chart id="OverAllMarks" val={sectionMarks} maxVal={100} />
           </StyledCard>
           <Grid container mt={3} mb={3} spacing={2}>
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={4} sm={4}>
               <StyledCard>
                 <Typography variant="h5" textAlign="center">
                   Correct: {correctCount}/100
@@ -152,7 +152,7 @@ function Result() {
                 <Chart id="correctCount" val={correctCount} maxVal={100} />
               </StyledCard>
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={4} sm={4}>
               <StyledCard>
                 <Typography variant="h5" textAlign="center">
                   Incorrect: {incorrectCount}/100
@@ -165,13 +165,14 @@ function Result() {
                 />
               </StyledCard>
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={4} sm={4}>
               <StyledCard>
                 <Typography variant="h5" textAlign="center">
                   Unanswered: {100 - (correctCount + incorrectCount)}/100
                 </Typography>
                 <Chart
                   id="unAnsweredCount"
+                  negative
                   val={100 - (correctCount + incorrectCount)}
                   maxVal={100}
                 />
