@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
-import { useTheme } from '@emotion/react';
 import { useTranslation } from 'react-i18next';
 // cmp
 import LoadingButton from '@mui/lab/LoadingButton';
@@ -16,13 +15,7 @@ import { ERROR_MESSAGE } from '../constants';
 
 function ContactUS() {
   const { t } = useTranslation();
-  const theme = useTheme();
-  const {
-    handleSubmit,
-    getValues,
-    formState: { errors },
-    control,
-  } = useForm({
+  const { handleSubmit, getValues, control } = useForm({
     mode: 'onChange',
     defaultValues: {
       fName: '',
@@ -61,9 +54,6 @@ function ContactUS() {
           paddingY: '50px',
           paddingX: '24px',
           width: '100%',
-          [theme.breakpoints.up('sm')]: {
-            // paddingX: '100px',
-          },
         }}
       >
         <Grid item sx={{ mb: 2 }}>
