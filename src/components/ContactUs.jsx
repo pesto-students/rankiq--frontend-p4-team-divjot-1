@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 // cmp
-import LoadingButton from '@mui/lab/LoadingButton';
+import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import Container from '@mui/system/Container';
 import Paper from '@mui/material/Paper';
 // services
 import { ERROR_MESSAGE } from '../constants';
@@ -51,8 +51,8 @@ function ContactUS() {
     <Container sx={{ display: 'flex', justifyContent: 'center' }}>
       <Paper
         sx={{
-          paddingY: '50px',
-          paddingX: '24px',
+          paddingY: '3.125rem',
+          paddingX: '1.5rem',
           width: '100%',
         }}
       >
@@ -167,14 +167,14 @@ function ContactUS() {
               sm={12}
               md={12}
             >
-              <LoadingButton
+              <Button
                 size="large"
                 variant="contained"
-                loading={loading}
+                disabled={loading}
                 onClick={handleSubmit(handleSendFeedback)}
               >
                 Submit
-              </LoadingButton>
+              </Button>
             </Grid>
           </Grid>
         </form>
