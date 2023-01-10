@@ -7,11 +7,18 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 // services
 import { ERROR_MESSAGE } from '../constants';
 
 // send email api;
+
+const StyledPaper = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.box.main,
+  padding: '3.125rem 1.5rem',
+  width: '100%',
+}));
 
 function ContactUS() {
   const { t } = useTranslation();
@@ -49,13 +56,7 @@ function ContactUS() {
 
   return (
     <Container sx={{ display: 'flex', justifyContent: 'center' }}>
-      <Paper
-        sx={{
-          paddingY: '3.125rem',
-          paddingX: '1.5rem',
-          width: '100%',
-        }}
-      >
+      <StyledPaper>
         <Grid item sx={{ mb: 2 }}>
           <Typography variant="h4" textAlign="center">
             {t('contactUs.pageTitle')}
@@ -178,7 +179,7 @@ function ContactUS() {
             </Grid>
           </Grid>
         </form>
-      </Paper>
+      </StyledPaper>
     </Container>
   );
 }

@@ -9,6 +9,7 @@ import Link from '@mui/material/Link';
 import Alert from '@mui/material/Alert';
 import { isEmpty } from 'lodash';
 import Typography from '@mui/material/Typography';
+import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import { useController, useForm } from 'react-hook-form';
 import { useNavigate, Link as RouterLink } from 'react-router-dom';
@@ -17,6 +18,10 @@ import { useTheme } from '@emotion/react';
 import { REGEX, ERROR_MESSAGE } from '../constants';
 import { signUpUser } from '../ducks/auth';
 import { authDataSelector, accessTokenSelector } from '../selectors';
+
+const StyledCard = styled(Card)(({ theme }) => ({
+  backgroundColor: theme.palette.box.main,
+}));
 
 function SignUp() {
   const dispatch = useDispatch();
@@ -107,7 +112,7 @@ function SignUp() {
   };
   return (
     <Container maxWidth="md">
-      <Card
+      <StyledCard
         sx={{
           padding: { xs: '2rem 1rem', sm: '2rem' },
           mt: { xs: '3rem', sm: '5rem' },
@@ -246,7 +251,7 @@ function SignUp() {
             </Grid>
           </Grid>
         </form>
-      </Card>
+      </StyledCard>
     </Container>
   );
 }

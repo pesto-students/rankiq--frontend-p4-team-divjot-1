@@ -22,13 +22,27 @@ import MenuItem from '@mui/material/MenuItem';
 import Switch from '@mui/material/Switch';
 import Stack from '@mui/material/Stack';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Logout from '@mui/icons-material/Logout';
+import Avatar from '@mui/material/Avatar';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import { styled } from '@mui/material/styles';
 // services
 import { isEmpty } from 'lodash';
 import { accessTokenSelector } from '../../selectors';
 import { logout } from '../../ducks/auth';
+import { ROUTES } from '../../constants';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+
+const { LOGIN, SIGNUP, DASHBOARD, FAQS, USER_HISTORY, CONTACT_US } = ROUTES;
+
+const NavButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.secondary.main,
+}));
+
+const StyledListItemButton = styled(ListItemButton)`
+  text-align: center;
+`;
 
 function NavBar() {
   const navigate = useNavigate();
@@ -74,27 +88,58 @@ function NavBar() {
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <StyledListItemButton
+          onClick={() => {
+            navigate(DASHBOARD);
+          }}
+        >
+          <ListItemText>Dashboard</ListItemText>
+        </StyledListItemButton>
+        <StyledListItemButton
+          onClick={() => {
+            navigate(FAQS);
+          }}
+        >
+          <ListItemText>FAQS</ListItemText>
+        </StyledListItemButton>
+        <StyledListItemButton
+          onClick={() => {
+            navigate(CONTACT_US);
+          }}
+        >
+          <ListItemText>Contact</ListItemText>
+        </StyledListItemButton>
+        {!isEmpty(accessToken) && (
+          <>
+            <StyledListItemButton
+              onClick={() => {
+                navigate(USER_HISTORY);
+              }}
+            >
+              <ListItemText>User History</ListItemText>
+            </StyledListItemButton>
+            <StyledListItemButton
+              onClick={() => {
+                navigate(USER_HISTORY);
+              }}
+            >
+              <ListItemText>My Account</ListItemText>
+            </StyledListItemButton>
+          </>
+        )}
         <ListItem disablePadding>
           {!isEmpty(accessToken) ? (
-            <ListItemButton sx={{ textAlign: 'center' }} onClick={handleLogout}>
+            <StyledListItemButton onClick={handleLogout}>
               <ListItemText>Logout</ListItemText>
-            </ListItemButton>
+            </StyledListItemButton>
           ) : (
-            <ListItemButton
-              sx={{ textAlign: 'center' }}
+            <StyledListItemButton
               onClick={() => {
-                navigate('/login');
+                navigate(LOGIN);
               }}
             >
               <ListItemText>Login</ListItemText>
-            </ListItemButton>
+            </StyledListItemButton>
           )}
         </ListItem>
       </List>
@@ -111,6 +156,9 @@ function NavBar() {
           <Box
             display="flex"
             sx={{ display: 'flex', alignItems: 'center', columnGap: '0.25rem' }}
+            onClick={() => {
+              navigate('/');
+            }}
           >
             <FontAwesomeIcon icon="fa-solid fa-ranking-star" size="lg" />
             <Typography
@@ -146,11 +194,46 @@ function NavBar() {
               />
               <Typography>{t('languages.en')}</Typography>
             </Stack>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
-              </Button>
-            ))}
+            <NavButton
+              onClick={() => {
+                navigate(DASHBOARD);
+              }}
+            >
+              Dashboard
+            </NavButton>
+            <NavButton
+              onClick={() => {
+                navigate(FAQS);
+              }}
+            >
+              FAQS
+            </NavButton>
+            <NavButton
+              onClick={() => {
+                navigate(CONTACT_US);
+              }}
+            >
+              Contact
+            </NavButton>
+            {isEmpty(accessToken) && (
+              <>
+                <NavButton
+                  onClick={() => {
+                    navigate(LOGIN);
+                  }}
+                >
+                  Login
+                </NavButton>
+                <NavButton
+                  onClick={() => {
+                    navigate(SIGNUP);
+                  }}
+                >
+                  Sign up
+                </NavButton>
+              </>
+            )}
+
             {!isEmpty(accessToken) && (
               <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                 <IconButton
@@ -164,28 +247,58 @@ function NavBar() {
                   <AccountCircle />
                 </IconButton>
                 <Menu
-                  id="menu-appbar"
                   anchorEl={anchorEl}
-                  anchorOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
-                  }}
+                  id="account-menu"
                   open={Boolean(anchorEl)}
                   onClose={handleClose}
+                  onClick={handleClose}
+                  PaperProps={{
+                    elevation: 0,
+                    sx: {
+                      overflow: 'visible',
+                      filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+                      mt: 1.5,
+                      '& .MuiAvatar-root': {
+                        width: 32,
+                        height: 32,
+                        ml: -0.5,
+                        mr: 1,
+                      },
+                      '&:before': {
+                        content: '""',
+                        display: 'block',
+                        position: 'absolute',
+                        top: 0,
+                        right: 14,
+                        width: 10,
+                        height: 10,
+                        bgcolor: 'background.paper',
+                        transform: 'translateY(-50%) rotate(45deg)',
+                        zIndex: 0,
+                      },
+                    },
+                  }}
+                  transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+                  anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
                 >
                   <MenuItem
                     onClick={() => {
-                      console.log('open user profile');
+                      navigate(USER_HISTORY);
                     }}
                   >
-                    Profile
+                    <Avatar /> User History
                   </MenuItem>
-                  <MenuItem onClick={handleLogout}>Logout</MenuItem>
+                  <MenuItem>
+                    <Avatar /> My account
+                  </MenuItem>
+                  <Divider />
+
+                  <MenuItem onClick={handleLogout}>
+                    <ListItemIcon>
+                      <Logout fontSize="small" />
+                    </ListItemIcon>
+                    Logout
+                  </MenuItem>
                 </Menu>
               </Box>
             )}
