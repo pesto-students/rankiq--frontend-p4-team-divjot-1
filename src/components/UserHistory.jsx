@@ -169,7 +169,7 @@ function UserHistory() {
                           handleCheckResult({ url });
                         }}
                       >
-                        Check Result
+                        Result
                       </Button>
                     </Box>
                   </StyledCard>
