@@ -9,7 +9,7 @@ const themeOptions = {
     secondary: {
       main: '#ffffff',
     },
-    text: { navFooter: '#FFFFFF' },
+    text: { navFooter: '#FFFFFF', subtitle: 'rgba(0,0,0,54%)' },
     box: { main: '#FAFAFA' },
   },
 };

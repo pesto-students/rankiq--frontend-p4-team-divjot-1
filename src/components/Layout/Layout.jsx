@@ -14,49 +14,41 @@ import Result from '../Result';
 import FAQsCmp from '../FAQsCmp';
 import ContactUS from '../ContactUs';
 
-// const themeOptions = {
-//   palette: {
-//     type: 'light',
-//     primary: {
-//       main: '#FE4066',
-//     },
-//     secondary: {
-//       main: '#5D5959',
-//     },
-//     text: { navFooter: '#FFFFFF' },
-//     box: { main: '#FAFAFA' },
-//   },
-// };
-
 function Layout() {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Box>
           <NavBar />
-          <main
-            id="content"
-            style={{
-              minHeight: 'calc(100vh - 130px)',
-              overflowY: 'auto',
-              marginTop: '90px',
-              paddingInline: '24px',
-            }}
-          >
-            <Routes>
-              <Route path="/" element={<Navigate to="/dashboard" replace />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<SignUp />} />
-              <Route path="/dashboard" element={<DashBoard />} />
-              <Route path="/result" element={<Result />} />
-              <Route path="/faqs" element={<FAQsCmp />} />
-              <Route path="/feedback" element={<ContactUS />} />
-              <Route element={<ProtectedRoute />}>
-                <Route path="/userHistory" element={<UserHistory />} />
-              </Route>
-              <Route path="*" element={<Navigate to="/dashboard" replace />} />
-            </Routes>
+          <main>
+            <Box
+              id="content"
+              sx={{
+                minHeight: 'calc(100vh - 6rem)',
+                overflowY: 'auto',
+                marginTop: { xs: '3.5rem', sm: '4rem' },
+                display: 'flex',
+                alignItems: 'center',
+              }}
+            >
+              <Routes>
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<SignUp />} />
+                <Route path="/dashboard" element={<DashBoard />} />
+                <Route path="/result" element={<Result />} />
+                <Route path="/faqs" element={<FAQsCmp />} />
+                <Route path="/contact-us" element={<ContactUS />} />
+                <Route element={<ProtectedRoute />}>
+                  <Route path="/userHistory" element={<UserHistory />} />
+                </Route>
+                <Route
+                  path="*"
+                  element={<Navigate to="/dashboard" replace />}
+                />
+              </Routes>
+            </Box>
           </main>
+
           <Footer />
         </Box>
       </BrowserRouter>

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm, Controller } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-// cmp
+// mui
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid';
@@ -11,8 +11,11 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Autocomplete from '@mui/material/Autocomplete';
 import Alert from '@mui/material/Alert';
-// services
+import Container from '@mui/material/Container';
+// cmp
 import { isEmpty } from 'lodash';
+import CenterCircularProgress from './CenterCircularProgress';
+// services
 import { saveExamData } from '../ducks/examInfo';
 import { authDataSelector, examInfoSelector } from '../selectors';
 import { EXAM_CATEGORY, EXAM_RESERVATION, EXAM_ZONES } from '../constants/exam';
@@ -62,7 +65,8 @@ function DashBoard() {
   };
 
   return (
-    <div>
+    <Container maxWidth="xl">
+      {loading && <CenterCircularProgress />}
       <Grid
         container
         spacing={{ xs: 2, md: 3 }}
@@ -74,6 +78,7 @@ function DashBoard() {
               padding: { xs: '2rem 1rem', sm: '2rem' },
               mt: '1rem',
               mb: { xs: '1rem', sm: '3rem' },
+              display: { xs: 'none', sm: 'block' },
             }}
           >
             <h2>{t('app.test')}</h2>
@@ -258,7 +263,7 @@ function DashBoard() {
           </Card>
         </Grid>
       </Grid>
-    </div>
+    </Container>
   );
 }
 
