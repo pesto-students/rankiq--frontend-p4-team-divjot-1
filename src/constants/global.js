@@ -9,3 +9,13 @@ export const ERROR_MESSAGE = {
   EMAIL: 'Invalid email',
   REQUIRED: 'This field is required',
 };
+
+export const ROUTES = {
+  LOGIN: '/login',
+  SIGNUP: '/signup',
+  DASHBOARD: '/dashboard',
+  RESULT: '/result',
+  FAQS: '/faqs',
+  CONTACT_US: '/contact-us',
+  USER_HISTORY: '/userHistory',
+};

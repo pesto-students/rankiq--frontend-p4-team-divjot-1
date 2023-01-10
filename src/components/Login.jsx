@@ -9,6 +9,7 @@ import TextField from '@mui/material/TextField';
 import Divider from '@mui/material/Divider';
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
+import Card from '@mui/material/Card';
 import Alert from '@mui/material/Alert';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, Link as RouterLink } from 'react-router-dom';
@@ -21,10 +22,8 @@ const StyledLink = styled(Link)({
   textDecoration: 'none',
 });
 
-const StyledBox = styled(Box)(({ theme }) => ({
+const StyledCard = styled(Card)(({ theme }) => ({
   backgroundColor: theme.palette.box.main,
-  boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
-  borderRadius: '1.3125rem',
 }));
 
 function Login() {
@@ -75,7 +74,7 @@ function Login() {
 
   return (
     <Container maxWidth="sm">
-      <StyledBox
+      <StyledCard
         sx={{
           padding: { xs: '2rem 1rem', sm: '2rem' },
         }}
@@ -181,7 +180,7 @@ function Login() {
             </Grid>
           </Grid>
         </form>
-      </StyledBox>
+      </StyledCard>
     </Container>
   );
 }
