@@ -12,10 +12,11 @@ import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import { useController, useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { useNavigate, Link as RouterLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTheme } from '@emotion/react';
-import { REGEX, ERROR_MESSAGE } from '../constants';
+import { REGEX } from '../constants';
 import { signUpUser } from '../ducks/auth';
 import { authDataSelector, accessTokenSelector } from '../selectors';
 
@@ -26,6 +27,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
 function SignUp() {
   const dispatch = useDispatch();
   const { loading, error, success } = useSelector(authDataSelector);
+  const { t } = useTranslation();
   const [showSignupError, setSignUpError] = useState(false);
   const accessToken = useSelector(accessTokenSelector);
   const navigate = useNavigate();
@@ -57,8 +59,8 @@ function SignUp() {
     name: 'email',
     control,
     rules: {
-      required: ERROR_MESSAGE.REQUIRED,
-      pattern: { value: REGEX.EMAIL, message: ERROR_MESSAGE.EMAIL },
+      required: t('errors.required'),
+      pattern: { value: REGEX.EMAIL, message: t('errors.email') },
     },
   });
 
@@ -69,8 +71,8 @@ function SignUp() {
     name: 'password',
     control,
     rules: {
-      required: ERROR_MESSAGE.REQUIRED,
-      pattern: { value: REGEX.PASSWORD, message: ERROR_MESSAGE.PASSWORD },
+      required: t('errors.required'),
+      pattern: { value: REGEX.PASSWORD, message: t('errors.password') },
     },
   });
 
@@ -83,7 +85,7 @@ function SignUp() {
     rules: {
       validate: {
         confirmPassword: (v) => {
-          return v !== getValues('password') ? 'Password didnt match' : null;
+          return v !== getValues('password') ? t('errors.cpassword') : null;
         },
       },
     },
@@ -96,7 +98,7 @@ function SignUp() {
     name: 'firstName',
     control,
     rules: {
-      required: ERROR_MESSAGE.REQUIRED,
+      required: t('errors.required'),
     },
   });
   const {
@@ -123,7 +125,7 @@ function SignUp() {
           <Grid container spacing={4}>
             <Grid item xs={12}>
               <Typography variant="h4" textAlign="center">
-                Sign Up
+                {t('generic.signup')}
               </Typography>
             </Grid>
             <Grid item xs={12}>
@@ -131,7 +133,7 @@ function SignUp() {
                 {...userNameProps}
                 inputRef={ref}
                 error={invalid}
-                label="Email id"
+                label={t('signup.email')}
                 helperText={userNameError?.message}
                 type="email"
                 fullWidth
@@ -143,7 +145,7 @@ function SignUp() {
                 {...passwordProps}
                 inputRef={passwordRef}
                 error={passwordInvalid}
-                label="Password"
+                label={t('signup.password')}
                 helperText={passwordError?.message}
                 required
                 type="password"
@@ -155,7 +157,7 @@ function SignUp() {
                 {...cPasswordProps}
                 inputRef={cPasswordRef}
                 error={cPasswordInvalid}
-                label="Confirm Password"
+                label={t('signup.cpassword')}
                 helperText={cPasswordErr?.message}
                 required
                 type="password"
@@ -167,7 +169,7 @@ function SignUp() {
                 {...fNameProps}
                 inputRef={fNameRef}
                 error={fNameInvalid}
-                label="First Name"
+                label={t('signup.fname')}
                 type="text"
                 helperText={fnameError?.message}
                 required
@@ -178,7 +180,7 @@ function SignUp() {
               <TextField
                 {...lNameProps}
                 inputRef={lNameRef}
-                label="Last Name"
+                label={t('signup.lname')}
                 type="text"
                 fullWidth
               />
@@ -195,7 +197,7 @@ function SignUp() {
                   dispatch(signUpUser(getValues()));
                 }}
               >
-                Sign Up
+                {t('generic.signup')}
               </Button>
             </Grid>
             <Grid item xs={6}>
@@ -205,7 +207,7 @@ function SignUp() {
                 onClick={handleReset}
                 fullWidth
               >
-                Reset
+                {t('generic.reset')}
               </Button>
             </Grid>
             {!isEmpty(error) && showSignupError && (
@@ -222,7 +224,7 @@ function SignUp() {
                 }}
               >
                 <Typography variant="body1" textAlign="center">
-                  Already signed up?
+                  {t('signup.already')}
                 </Typography>
                 <Link
                   component={RouterLink}
@@ -230,12 +232,12 @@ function SignUp() {
                   color={theme.palette.primary.main}
                   to="/login"
                 >
-                  Login.
+                  {t('signup.login')}
                 </Link>
               </Box>
             </Grid>
             <Grid item xs={12}>
-              <Divider>OR</Divider>
+              <Divider>{t('login.or')}</Divider>
             </Grid>
             <Grid item xs={12}>
               <Button
@@ -246,7 +248,7 @@ function SignUp() {
                   navigate('/dashboard');
                 }}
               >
-                Continue as Guest
+                {t('signup.guest')}
               </Button>
             </Grid>
           </Grid>

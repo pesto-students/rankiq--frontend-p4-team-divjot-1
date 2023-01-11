@@ -93,21 +93,21 @@ function NavBar() {
             navigate(DASHBOARD);
           }}
         >
-          <ListItemText>Dashboard</ListItemText>
+          <ListItemText>{t('generic.dashboard')}</ListItemText>
         </StyledListItemButton>
         <StyledListItemButton
           onClick={() => {
             navigate(FAQS);
           }}
         >
-          <ListItemText>FAQS</ListItemText>
+          <ListItemText>{t('generic.faqs')}</ListItemText>
         </StyledListItemButton>
         <StyledListItemButton
           onClick={() => {
             navigate(CONTACT_US);
           }}
         >
-          <ListItemText>Contact</ListItemText>
+          <ListItemText>{t('generic.contact')}</ListItemText>
         </StyledListItemButton>
         {!isEmpty(accessToken) && (
           <>
@@ -116,21 +116,21 @@ function NavBar() {
                 navigate(USER_HISTORY);
               }}
             >
-              <ListItemText>User History</ListItemText>
+              <ListItemText>{t('generic.history')}</ListItemText>
             </StyledListItemButton>
             <StyledListItemButton
               onClick={() => {
                 navigate(USER_HISTORY);
               }}
             >
-              <ListItemText>My Account</ListItemText>
+              <ListItemText>{t('generic.account')}</ListItemText>
             </StyledListItemButton>
           </>
         )}
         <ListItem disablePadding>
           {!isEmpty(accessToken) ? (
             <StyledListItemButton onClick={handleLogout}>
-              <ListItemText>Logout</ListItemText>
+              <ListItemText>{t('generic.logout')}</ListItemText>
             </StyledListItemButton>
           ) : (
             <StyledListItemButton
@@ -138,7 +138,7 @@ function NavBar() {
                 navigate(LOGIN);
               }}
             >
-              <ListItemText>Login</ListItemText>
+              <ListItemText>{t('generic.login')}</ListItemText>
             </StyledListItemButton>
           )}
         </ListItem>
@@ -199,21 +199,21 @@ function NavBar() {
                 navigate(DASHBOARD);
               }}
             >
-              Dashboard
+              {t('generic.dashboard')}
             </NavButton>
             <NavButton
               onClick={() => {
                 navigate(FAQS);
               }}
             >
-              FAQS
+              {t('generic.faqs')}
             </NavButton>
             <NavButton
               onClick={() => {
                 navigate(CONTACT_US);
               }}
             >
-              Contact
+              {t('generic.contact')}
             </NavButton>
             {isEmpty(accessToken) && (
               <>
@@ -222,14 +222,14 @@ function NavBar() {
                     navigate(LOGIN);
                   }}
                 >
-                  Login
+                  {t('generic.login')}
                 </NavButton>
                 <NavButton
                   onClick={() => {
                     navigate(SIGNUP);
                   }}
                 >
-                  Sign up
+                  {t('generic.signup')}
                 </NavButton>
               </>
             )}
@@ -286,10 +286,10 @@ function NavBar() {
                       navigate(USER_HISTORY);
                     }}
                   >
-                    <Avatar /> User History
+                    <Avatar /> {t('generic.history')}
                   </MenuItem>
                   <MenuItem>
-                    <Avatar /> My account
+                    <Avatar /> {t('generic.account')}
                   </MenuItem>
                   <Divider />
 
@@ -297,7 +297,7 @@ function NavBar() {
                     <ListItemIcon>
                       <Logout fontSize="small" />
                     </ListItemIcon>
-                    Logout
+                    {t('generic.logout')}
                   </MenuItem>
                 </Menu>
               </Box>

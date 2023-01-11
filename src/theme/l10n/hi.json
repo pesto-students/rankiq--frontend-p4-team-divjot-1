@@ -5,7 +5,16 @@
 	"generic": {
 		"logout": "लॉग आउट",
 		"login": "लॉग इन",
-		"signup": "साइन अप"
+		"signup": "साइन अप",
+		"dashboard":"डैशबोर्ड",
+		"about":"बारे में",
+		"faqs":"सामान्य प्रश्न",
+		"history":"उपयोगकर्ता इतिहास",
+		"contact":"संपर्क करें",
+        "account":"मेरा खाता",
+		"required":"यह विवरण आवश्यक है",
+		"submit":"प्रस्तुत करना",
+		"reset":"रीसेट"
 	},
 	"appBar": {
 		"home": "होम पेज",
@@ -15,6 +24,31 @@
 	"languages": {
 		"hi": "हिंदी",
 		"en": "English"
+	},
+	"dashboard":{
+		"rrcGroupD":"आरआरसी ग्रुप डी",
+		"answerUrl":"उत्तर पत्रक यूआरएल",
+		"category":"श्रेणी",
+		"reservation":"आरक्षण",
+		"zone":"क्षेत्र"
+	},
+	"login":{
+		"email":"ईमेल आईडी",
+		"password":"पासवर्ड",
+		"notOnRankiq":"रैंकआईक्यू पर अभी तक नहीं हो? ",
+		"signup":"साइन अप करें।",
+		"or":"या",
+		"guest":"अतिथि के रूप में जारी रखें"
+	},
+	"signup":{
+		"email":"ईमेल आईडी",
+		"password":"पासवर्ड",
+		"cpassword":"पासवर्ड की पुष्टि कीजिये",
+		"fname":"पहला नाम",
+		"lname":"उपनाम",
+		"already":"पहले ही साइन अप कर लिया है? ",
+		"login":"लॉग इन करें",
+		"guest":"अतिथि के रूप में जारी रखें"
 	},
 	"contactUs": {
 		"pageTitle": "Contact Us",
@@ -26,24 +60,85 @@
 	},
 	"FAQs": [
 		{
-			"que": "Why my rank is changing each time I refresh the page?",
-			"ans": "The Rank iQ gives you a real-time analysis of your Rank which keeps getting updated as the number of students using this predictor keeps getting increased. So students are advised to check their ranks again after a certain time interval to know their updated rank."
+			"que": "जब भी मैं पेज को रीफ्रेश करता हूं तो मेरी रैंक क्यों बदल रही है?",
+			"ans": "रैंक आईक्यू आपको आपकी रैंक का रीयल-टाइम विश्लेषण देता है जो अपडेट होता रहता है क्योंकि इस प्रेडिक्टर का उपयोग करने वाले छात्रों की संख्या बढ़ती रहती है। इसलिए छात्रों को सलाह दी जाती है कि वे अपनी अपडेटेड रैंक जानने के लिए एक निश्चित समय अंतराल के बाद फिर से अपनी रैंक की जांच करें।"
 		},
 		{
-			"que": "What happens if the marks are same for multiple students? How rank is calculated?",
-			"ans": "Let’s say topper has 127 marks, so his rank is 1. Now, there are three students with 126 marks, then all of them will see their rank as 2. The student with 125 marks will see his rank as 1+3+1=5."
+			"que": "यदि कई छात्रों के अंक समान हैं तो क्या होगा? रैंक की गणना कैसे की जाती है?",
+			"ans": "मान लें कि टॉपर के 127 अंक हैं, तो उसकी रैंक 1 है। अब, 126 अंकों के साथ तीन छात्र हैं, तो वे सभी अपनी रैंक 2 के रूप में देखेंगे। 125 अंकों वाले छात्र को अपनी रैंक 1+3+1=5 के रूप में दिखाई देगी।"
 		},
 		{
-			"que": "Do the total number of students increase after old student rechecking with the same URL?",
-			"ans": "Each student is given a unique Id to avoid any duplication. Hence, even if you check the marks with response sheet multiple times, total students don’t change."
+			"que": "पुराने छात्र द्वारा एक ही URL से दोबारा जाँच करने पर क्या छात्रों की कुल संख्या में वृद्धि होती है?",
+			"ans": "किसी भी नकल से बचने के लिए प्रत्येक छात्र को एक विशिष्ट आईडी दी जाती है। इसलिए, भले ही आप कई बार उत्तर पत्रक के अंकों की जांच करते हैं, कुल छात्रों में परिवर्तन नहीं होता है।"
 		},
 		{
-			"que": "The total number of student shown on rank page is for a particular branch or overall students?",
-			"ans": "The number of student shown on rank page is for particular branch or subjects."
+			"que": "रैंक पेज पर दिखाए गए छात्रों की कुल संख्या किसी विशेष शाखा या समग्र छात्रों के लिए है?",
+			"ans": "रैंक पेज पर दर्शाए गए छात्र की संख्या विशेष शाखा या विषयों के लिए है।"
 		},
 		{
-			"que": "How Normalization score is calculated?",
-			"ans": "Normalization score is calculated in case of multiple shifts. Calculation varies as per exam conducting authority. Whichever is the exam, normalization score is calculated as per the formula given by exam conducting authority."
+			"que": "सामान्यीकरण स्कोर की गणना कैसे की जाती है?",
+			"ans": "कई पारियों के मामले में सामान्यीकरण स्कोर की गणना की जाती है। परीक्षा संचालन प्राधिकरण के अनुसार गणना भिन्न होती है। कोई भी परीक्षा हो, सामान्यीकरण स्कोर की गणना परीक्षा संचालन प्राधिकरण द्वारा दिए गए फॉर्मूले के अनुसार की जाती है।"
 		}
-	]
+	],
+	"errors":{
+		"email":"अमान्य ईमेल",
+		"password":"अक्षर, संख्या और विशेष चार के संयोजन के साथ न्यूनतम 6 वर्ण की आवश्यकता है",
+		"required":"यह विवरण आवश्यक है",
+		"cpassword":"पासवर्ड मेल नहीं खाता"
+	},
+	"exam":{
+		"rrb":{
+			"none":"कोई भी नहीं",
+			"allahabad":"उत्तर मध्य रेलवे (इलाहाबाद)",
+			"delhi":"उत्तर रेलवे (नई दिल्ली)",
+			"gorakhpur":"उत्तर पूर्व रेलवे (गोरखपुर)",
+			"jaipur":"उत्तर पश्चिम रेलवे (जयपुर)",
+			"jabalpur":"पश्चिम मध्य रेलवे (जबलपुर)",
+			"wmumbai":"पश्चिम रेलवे (मुंबई)",
+			"cmumbai":"मध्य रेलवे (मुंबई)",
+			"sekolkata":"दक्षिण पूर्व रेलवे (कोलकाता)",
+			"ekolkata":"पूर्वी रेलवे (कोलकाता)",
+			"bilaspur":"दक्षिण पूर्व मध्य रेलवे (बिलासपुर)",
+			"hubli":"दक्षिण पश्चिम रेलवे (हुबली)",
+			"chennai":"दक्षिणी रेलवे (चेन्नई)",
+			"hyd":"दक्षिण मध्य रेलवे (सिकंदराबाद)",
+			"guvhati":"उत्तर पूर्व सीमांत रेलवे (गुवाहाटी)",
+			"hajipur":"पूर्व मध्य रेलवे (हाजीपुर)",
+			"bhuvaneshwar":"ईस्ट कोस्ट रेलवे (भुवनेश्वर)"
+		},
+		"category":{
+			"open":"अनारक्षित/खुला",
+			"obc":"अन्य पिछड़ा वर्ग",
+			"ews":"आर्थिक रूप से कमजोर वर्ग",
+			"sc":"अनुसूचित जाति",
+			"st":"अनुसूचित जनजाति"
+		},
+		"reservation":{
+			"none":"कोई भी नहीं",
+			"ccaa":"सीसीएए",
+			"oh":"ओएच",
+			"vh":"वीएच",
+			"exsm":"एक्सएसएम"
+		}
+	},
+	"result":{
+		"marks":"अंक प्राप्त की",
+		"total":"कुल मार्क",
+		"negative":"नकारात्मक अंक",
+		"correct":"सही जवाब",
+		"unanswered":"बिना जवाब",
+		"incorrect":"ग़लत जवाब",
+		"subject":"विषय",
+		"center":"केंद्र",
+		"examDate":"परीक्षा तिथि",
+		"time":"समय",
+		"checkRank":"रैंक जांचें",
+		"other":"अन्य जानकारी",
+		"predicted":"अनुमानित रैंक",
+		"close":"बंद करना"
+	}
+
 }
+
+
+

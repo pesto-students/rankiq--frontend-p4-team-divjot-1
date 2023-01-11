@@ -19,7 +19,6 @@ import CenterCircularProgress from './CenterCircularProgress';
 import { saveExamData } from '../ducks/examInfo';
 import { authDataSelector, examInfoSelector } from '../selectors';
 import { EXAM_CATEGORY, EXAM_RESERVATION, EXAM_ZONES } from '../constants/exam';
-import { ERROR_MESSAGE } from '../constants';
 
 function DashBoard() {
   const { t } = useTranslation();
@@ -63,6 +62,7 @@ function DashBoard() {
     setShowError(false);
     reset();
   };
+  const requiredText = t('generic.required');
 
   return (
     <Container maxWidth="xl">
@@ -94,7 +94,7 @@ function DashBoard() {
           >
             <Grid item sx={{ mb: 2 }} xs={12}>
               <Typography variant="h4" textAlign="center">
-                RRC Group D
+                {t('dashboard.rrcGroupD')}
               </Typography>
             </Grid>
             <form>
@@ -103,13 +103,13 @@ function DashBoard() {
                   <Controller
                     name="examUrl"
                     control={control}
-                    rules={{ required: ERROR_MESSAGE.REQUIRED }}
+                    rules={{ required: requiredText }}
                     render={({
                       field: { ref, ...urlProps },
                       fieldState: { invalid, error },
                     }) => (
                       <TextField
-                        label="Answersheet Url"
+                        label={t('dashboard.answerUrl')}
                         fullWidth
                         error={invalid}
                         helperText={error?.message}
@@ -122,7 +122,7 @@ function DashBoard() {
                   <Controller
                     control={control}
                     name="category"
-                    rules={{ required: ERROR_MESSAGE.REQUIRED }}
+                    rules={{ required: requiredText }}
                     render={({
                       field: { onChange, value },
                       fieldState: { error, invalid },
@@ -134,7 +134,7 @@ function DashBoard() {
                         value={value}
                         options={EXAM_CATEGORY}
                         getOptionLabel={(item) =>
-                          item.label ? item.label : ''
+                          item.label ? t(`exam.category.${item.key}`) : ''
                         }
                         getOptionSelected={(option, val) =>
                           val === undefined ||
@@ -144,7 +144,7 @@ function DashBoard() {
                         renderInput={(params) => (
                           <TextField
                             {...params}
-                            label="Category"
+                            label={t('dashboard.category')}
                             margin="normal"
                             variant="outlined"
                             error={invalid}
@@ -160,7 +160,7 @@ function DashBoard() {
                   <Controller
                     control={control}
                     name="reservation"
-                    rules={{ required: ERROR_MESSAGE.REQUIRED }}
+                    rules={{ required: requiredText }}
                     render={({
                       field: { onChange, value },
                       fieldState: { error, invalid },
@@ -172,7 +172,7 @@ function DashBoard() {
                         value={value}
                         options={EXAM_RESERVATION}
                         getOptionLabel={(item) =>
-                          item.label ? item.label : ''
+                          item.label ? t(`exam.reservation.${item.key}`) : ''
                         }
                         getOptionSelected={(option, val) =>
                           val === undefined ||
@@ -182,7 +182,7 @@ function DashBoard() {
                         renderInput={(params) => (
                           <TextField
                             {...params}
-                            label="Reservation"
+                            label={t('dashboard.reservation')}
                             margin="normal"
                             variant="outlined"
                             error={invalid}
@@ -198,7 +198,7 @@ function DashBoard() {
                   <Controller
                     control={control}
                     name="zone"
-                    rules={{ required: ERROR_MESSAGE.REQUIRED }}
+                    rules={{ required: requiredText }}
                     render={({
                       field: { onChange, value },
                       fieldState: { error, invalid },
@@ -210,7 +210,7 @@ function DashBoard() {
                         value={value}
                         options={EXAM_ZONES}
                         getOptionLabel={(item) =>
-                          item.label ? item.label : ''
+                          item.label ? t(`exam.rrb.${item.key}`) : ''
                         }
                         getOptionSelected={(option, val) =>
                           val === undefined ||
@@ -220,7 +220,7 @@ function DashBoard() {
                         renderInput={(params) => (
                           <TextField
                             {...params}
-                            label="Zone"
+                            label={t('dashboard.zone')}
                             margin="normal"
                             variant="outlined"
                             error={invalid}
@@ -240,7 +240,7 @@ function DashBoard() {
                     disabled={!isEmpty(errors) || loading}
                     onClick={handleSubmit(handleSaveData)}
                   >
-                    Submit
+                    {t('generic.submit')}
                   </Button>
                 </Grid>
                 <Grid item xs={6}>
@@ -250,7 +250,7 @@ function DashBoard() {
                     onClick={handleReset}
                     fullWidth
                   >
-                    Reset
+                    {t('generic.reset')}
                   </Button>
                 </Grid>
                 {!isEmpty(examError) && showError && (

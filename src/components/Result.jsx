@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Avatar from '@mui/material/Avatar';
 import Container from '@mui/material/Container';
 import Card from '@mui/material/Card';
@@ -75,6 +76,7 @@ OtherDetailsContent.propTypes = {
 };
 
 function Result() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const isExamInfoPresent = useSelector(isExamInfoPresentSelector);
   const primaryDetails = useSelector(primaryDetailsSelector);
@@ -131,13 +133,13 @@ function Result() {
           >
             <Box>
               <Typography variant="h5">
-                Marks Obtained: {Math.round(sectionMarks * 100) / 100}
+                {t('result.marks')}: {Math.round(sectionMarks * 100) / 100}
               </Typography>
               <Typography variant="subtitle2" color="text.subtitle">
-                Total Marks: {correctCount * MARKING.CORRECT}
+                {t('result.total')}: {correctCount * MARKING.CORRECT}
               </Typography>
               <Typography variant="subtitle2" color="text.subtitle">
-                Negative Marks:{' '}
+                {t('result.negative')}:{' '}
                 {Math.round(incorrectCount * MARKING.INCORRECT * 100) / 100}
               </Typography>
             </Box>
@@ -147,7 +149,7 @@ function Result() {
             <Grid item xs={12} sm={4}>
               <StyledCard>
                 <Typography variant="h5" textAlign="center">
-                  Correct: {correctCount}/100
+                  {t('result.correct')}: {correctCount}/100
                 </Typography>
                 <Chart id="correctCount" val={correctCount} maxVal={100} />
               </StyledCard>
@@ -155,7 +157,7 @@ function Result() {
             <Grid item xs={12} sm={4}>
               <StyledCard>
                 <Typography variant="h5" textAlign="center">
-                  Incorrect: {incorrectCount}/100
+                  {t('result.incorrect')}: {incorrectCount}/100
                 </Typography>
                 <Chart
                   id="incorrectCount"
@@ -168,7 +170,8 @@ function Result() {
             <Grid item xs={12} sm={4}>
               <StyledCard>
                 <Typography variant="h5" textAlign="center">
-                  Unanswered: {100 - (correctCount + incorrectCount)}/100
+                  {t('result.unanswered')}:{' '}
+                  {100 - (correctCount + incorrectCount)}/100
                 </Typography>
                 <Chart
                   id="unAnsweredCount"
@@ -180,36 +183,39 @@ function Result() {
             </Grid>
           </Grid>
           <StyledCard sx={{ padding: 1, marginBottom: 3 }}>
-            <Typography variant="h5">Other Details</Typography>
+            <Typography variant="h5">{t('result.other')}</Typography>
             <OtherDetailsContent
-              label="Subject"
+              label={t('result.subject')}
               content={primaryDetails.subject}
             />
             <OtherDetailsContent
-              label="Center"
+              label={t('result.center')}
               content={primaryDetails.center}
             />
             <OtherDetailsContent
-              label="Exam Date"
+              label={t('result.examDate')}
               content={primaryDetails.date}
             />
-            <OtherDetailsContent label="Time" content={primaryDetails.time} />
+            <OtherDetailsContent
+              label={t('result.time')}
+              content={primaryDetails.time}
+            />
           </StyledCard>
           <Box sx={{ display: 'flex', justifyContent: 'space-around' }}>
             <Button size="large" variant="contained" onClick={handleCheckRank}>
-              Check Rank
+              {t('result.checkRank')}
             </Button>
           </Box>
         </Card>
       </Container>
       <Dialog fullWidth open={openRank} maxWidth="sm">
-        <DialogTitle>Predicted Ranks</DialogTitle>
+        <DialogTitle>{t('result.predicted')}</DialogTitle>
         <DialogContent>
           <Rank rollNumber={primaryDetails.rollNumber} />
         </DialogContent>
         <DialogActions disableSpacing>
           <Button size="large" variant="contained" onClick={handleClose}>
-            Close
+            {t('result.close')}
           </Button>
         </DialogActions>
       </Dialog>

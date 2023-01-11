@@ -13,8 +13,9 @@ import Card from '@mui/material/Card';
 import Alert from '@mui/material/Alert';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, Link as RouterLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { isEmpty } from 'lodash';
-import { REGEX, ERROR_MESSAGE } from '../constants';
+import { REGEX } from '../constants';
 import { signInUser } from '../ducks/auth';
 import { accessTokenSelector, authDataSelector } from '../selectors';
 
@@ -27,6 +28,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
 }));
 
 function Login() {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [showError, setShowError] = useState(false);
@@ -50,8 +52,8 @@ function Login() {
     name: 'email',
     control,
     rules: {
-      required: ERROR_MESSAGE.REQUIRED,
-      pattern: { value: REGEX.EMAIL, message: ERROR_MESSAGE.EMAIL },
+      required: t('errors.required'),
+      pattern: { value: REGEX.EMAIL, message: t('errors.email') },
     },
   });
 
@@ -62,8 +64,8 @@ function Login() {
     name: 'password',
     control,
     rules: {
-      required: ERROR_MESSAGE.REQUIRED,
-      pattern: { value: REGEX.PASSWORD, message: ERROR_MESSAGE.PASSWORD },
+      required: t('errors.required'),
+      pattern: { value: REGEX.PASSWORD, message: t('errors.password') },
     },
   });
 
@@ -83,7 +85,7 @@ function Login() {
           <Grid container spacing={4}>
             <Grid item xs={12}>
               <Typography variant="h4" textAlign="center">
-                Login
+                {t('generic.login')}
               </Typography>
             </Grid>
             <Grid item xs={12}>
@@ -91,7 +93,7 @@ function Login() {
                 {...userNameProps}
                 inputRef={ref}
                 error={invalid}
-                label="Email Id"
+                label={t('login.email')}
                 type="email"
                 helperText={userNameError?.message}
                 required
@@ -103,7 +105,7 @@ function Login() {
                 {...passwordProps}
                 inputRef={passwordRef}
                 error={passwordInvalid}
-                label="Password"
+                label={t('login.password')}
                 helperText={passwordError?.message}
                 required
                 type="password"
@@ -122,7 +124,7 @@ function Login() {
                   dispatch(signInUser(getValues()));
                 }}
               >
-                Login
+                {t('generic.login')}
               </Button>
             </Grid>
 
@@ -133,7 +135,7 @@ function Login() {
                 onClick={handleReset}
                 fullWidth
               >
-                Reset
+                {t('generic.reset')}
               </Button>
             </Grid>
             {!isEmpty(error) && showError && (
@@ -150,7 +152,7 @@ function Login() {
                 }}
               >
                 <Typography variant="body1" textAlign="center">
-                  Not on RankIQ yet?
+                  {t('login.notOnRankiq')}
                 </Typography>
                 <StyledLink
                   component={RouterLink}
@@ -158,13 +160,13 @@ function Login() {
                   color="primary.main"
                   to="/signup"
                 >
-                  signup
+                  {t('login.signup')}
                 </StyledLink>
               </Box>
             </Grid>
 
             <Grid item xs={12}>
-              <Divider>OR</Divider>
+              <Divider>{t('login.or')}</Divider>
             </Grid>
             <Grid item xs={12}>
               <Button
@@ -175,7 +177,7 @@ function Login() {
                   navigate('/dashboard');
                 }}
               >
-                Continue as Guest
+                {t('login.guest')}
               </Button>
             </Grid>
           </Grid>
