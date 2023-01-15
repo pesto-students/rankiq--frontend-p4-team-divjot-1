@@ -13,13 +13,14 @@ import Typography from '@mui/material/Typography';
 import Autocomplete from '@mui/material/Autocomplete';
 import Alert from '@mui/material/Alert';
 import Container from '@mui/material/Container';
-// cmp
-import { isEmpty } from 'lodash';
-import CenterCircularProgress from './CenterCircularProgress';
 // services
+import { isEmpty } from 'lodash';
 import { saveExamData } from '../ducks/examInfo';
 import { authDataSelector, examInfoSelector } from '../selectors';
 import { EXAM_CATEGORY, EXAM_RESERVATION, EXAM_ZONES } from '../constants/exam';
+// cmp
+import CenterCircularProgress from './CenterCircularProgress';
+import DashboardInfoPane from './DashboardInfoPane';
 
 function DashBoard() {
   const { t } = useTranslation();
@@ -73,19 +74,10 @@ function DashBoard() {
         spacing={{ xs: 2, md: 3 }}
         columns={{ xs: 4, sm: 4, md: 12 }}
       >
-        <Grid item xs={4} sm={6} md={6}>
-          <Card
-            sx={{
-              padding: { xs: '2rem 1rem', sm: '2rem' },
-              mt: '1rem',
-              mb: { xs: '1rem', sm: '3rem' },
-              display: { xs: 'none', sm: 'block' },
-            }}
-          >
-            <h2>{t('app.test')}</h2>
-          </Card>
+        <Grid item xs={4} sm={6} md={6} order={{ xs: 2, sm: 1, md: 1 }}>
+          <DashboardInfoPane />
         </Grid>
-        <Grid item xs={4} sm={6} md={6}>
+        <Grid item xs={4} sm={6} md={6} order={{ xs: 1, sm: 2, md: 2 }}>
           <Card
             sx={{
               padding: { xs: '2rem 1rem', sm: '2rem' },
