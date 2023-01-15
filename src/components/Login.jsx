@@ -161,7 +161,7 @@ function Login() {
             <Grid item xs={12}>
               <Box
                 sx={{
-                  display: 'flex',
+                  display: { xs: 'none', md: 'flex' },
                   columnGap: '0.5rem',
                   justifyContent: 'center',
                 }}
@@ -191,6 +191,45 @@ function Login() {
                   {t('login.resetPassword')}
                 </StyledLink>
               </Box>
+              <Grid item xs={12}>
+                <Box
+                  sx={{
+                    display: { xs: 'flex', md: 'none' },
+                    columnGap: '0.5rem',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <Typography variant="body1" textAlign="center">
+                    {t('login.notOnRankiq')}
+                  </Typography>
+                  <StyledLink
+                    component={RouterLink}
+                    variant="body1"
+                    color="primary.main"
+                    to="/signup"
+                  >
+                    {t('login.signup')}
+                  </StyledLink>
+                </Box>
+              </Grid>
+              <Grid item xs={12}>
+                <Box
+                  sx={{
+                    display: { xs: 'flex', md: 'none' },
+                    columnGap: '0.5rem',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <StyledLink
+                    component={RouterLink}
+                    variant="body1"
+                    color="primary.main"
+                    onClick={() => setOpenResetDialog(true)}
+                  >
+                    {t('login.resetPassword')}
+                  </StyledLink>
+                </Box>
+              </Grid>
             </Grid>
 
             <Grid item xs={12}>
