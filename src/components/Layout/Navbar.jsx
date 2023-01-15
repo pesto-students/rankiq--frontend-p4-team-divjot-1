@@ -75,6 +75,7 @@ function NavBar() {
   const handleLogout = () => {
     dispatch(logout());
     navigate('/login');
+    Sentry.setUser(null);
   };
 
   const handleLanguageChange = (event) => {

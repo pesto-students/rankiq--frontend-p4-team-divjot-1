@@ -19,7 +19,11 @@ import { isEmpty } from 'lodash';
 import { REGEX } from '../constants';
 import CenterCircularProgress from './CenterCircularProgress';
 import { signInUser } from '../ducks/auth';
-import { accessTokenSelector, authDataSelector } from '../selectors';
+import {
+  accessTokenSelector,
+  authDataSelector,
+  userEmailSelector,
+} from '../selectors';
 
 const StyledLink = styled(Link)({
   textDecoration: 'none',
@@ -36,12 +40,16 @@ function Login() {
   const [showError, setShowError] = useState(false);
   const { error, loading } = useSelector(authDataSelector);
   const accessToken = useSelector(accessTokenSelector);
+  const email = useSelector(userEmailSelector);
 
   useEffect(() => {
     if (!isEmpty(accessToken)) {
       navigate('/dashboard');
     }
-  }, [navigate, accessToken]);
+    if (email) {
+      Sentry.setUser({ email });
+    }
+  }, [navigate, accessToken, email]);
   const { control, formState, reset, getValues } = useForm({
     mode: 'onBlur',
     defaultValues: { email: '', password: '' },
@@ -177,6 +185,7 @@ function Login() {
                 variant="contained"
                 fullWidth
                 onClick={() => {
+                  Sentry.setUser({ email: 'guest' });
                   navigate('/dashboard');
                 }}
               >

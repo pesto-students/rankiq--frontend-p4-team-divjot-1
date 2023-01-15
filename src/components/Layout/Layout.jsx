@@ -1,6 +1,8 @@
+import { useEffect } from 'react';
 import Box from '@mui/material/Box';
 import { ThemeProvider } from '@mui/material/styles';
 import { Route, Routes, BrowserRouter, Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import * as Sentry from '@sentry/react';
 import theme from '../../theme/theme';
 // cmp
@@ -14,9 +16,19 @@ import DashBoard from '../DashBoard';
 import Result from '../Result';
 import FAQsCmp from '../FAQsCmp';
 import ContactUS from '../ContactUs';
+import { userEmailSelector } from '../../selectors';
 
 function Layout() {
   const SentryRoutes = Sentry.withSentryReactRouterV6Routing(Routes);
+  const email = useSelector(userEmailSelector);
+  useEffect(() => {
+    if (email) {
+      Sentry.setUser({ email });
+    } else {
+      Sentry.setUser({ email: 'guest' });
+    }
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
