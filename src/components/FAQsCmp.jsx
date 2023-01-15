@@ -1,7 +1,9 @@
+import { Fragment } from 'react';
 import { useTheme } from '@emotion/react';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import { useTranslation } from 'react-i18next';
+import * as Sentry from '@sentry/react';
 
 function FAQsCmp() {
   const theme = useTheme();
@@ -10,7 +12,7 @@ function FAQsCmp() {
   return (
     <Paper sx={{ paddingY: '50px' }}>
       {FAQentries.map((FAQentry) => (
-        <>
+        <Fragment key={FAQentry.que}>
           <Typography
             sx={{
               fontSize: '24px',
@@ -36,10 +38,10 @@ function FAQsCmp() {
           >
             {FAQentry.ans}
           </Typography>
-        </>
+        </Fragment>
       ))}
     </Paper>
   );
 }
 
-export default FAQsCmp;
+export default Sentry.withProfiler(FAQsCmp, { name: 'FAQ' });

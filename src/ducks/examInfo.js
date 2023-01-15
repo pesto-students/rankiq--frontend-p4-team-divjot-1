@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import * as Sentry from '@sentry/react';
 import { getExamDetailsFromHtml } from '../utils/commonUtils';
 import { SERVER_BASE_API, EXAM_API } from '../constants/endpoints';
 
@@ -53,6 +54,7 @@ export const saveExamData = createAsyncThunk(
         const err = new Error(message || res);
         err.response = res;
         err.status = res.status;
+        Sentry.captureException(err);
         throw err;
       }
     }

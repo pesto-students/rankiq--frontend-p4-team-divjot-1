@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm, Controller } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
+import * as Sentry from '@sentry/react';
 // mui
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -267,4 +268,4 @@ function DashBoard() {
   );
 }
 
-export default DashBoard;
+export default Sentry.withProfiler(DashBoard, { name: 'Dashboard' });

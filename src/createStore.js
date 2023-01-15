@@ -1,5 +1,6 @@
 /* eslint-disable dot-notation */
 import { configureStore } from '@reduxjs/toolkit';
+import * as Sentry from '@sentry/react';
 import {
   authReducer,
   examInfoReducer,
@@ -8,6 +9,7 @@ import {
 } from './ducks';
 
 function setupStore() {
+  const sentryReduxEnhancer = Sentry.createReduxEnhancer({});
   const store = configureStore({
     reducer: {
       auth: authReducer,
@@ -15,6 +17,7 @@ function setupStore() {
       rankData: rankDataReducer,
       userHistory: userHistoryReducer,
     },
+    enhancers: [sentryReduxEnhancer],
   });
 
   return store;

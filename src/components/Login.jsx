@@ -15,11 +15,12 @@ import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 import Card from '@mui/material/Card';
 import Alert from '@mui/material/Alert';
-// constants and services
+import * as Sentry from '@sentry/react';
 import { isEmpty } from 'lodash';
+import { REGEX } from '../constants';
+import CenterCircularProgress from './CenterCircularProgress';
 import { signInUser } from '../ducks/auth';
 import { accessTokenSelector, authDataSelector } from '../selectors';
-import { REGEX } from '../constants';
 // cmp
 import ResetPasswordDialog from './ResetPasswordDialog';
 
@@ -82,6 +83,7 @@ function Login() {
 
   return (
     <Container maxWidth="sm">
+      {loading && <CenterCircularProgress />}
       <StyledCard
         sx={{
           padding: { xs: '2rem 1rem', sm: '2rem' },
@@ -210,4 +212,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Sentry.withProfiler(Login, { name: 'Login' });

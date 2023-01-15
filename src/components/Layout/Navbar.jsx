@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import * as Sentry from '@sentry/react';
 // mui
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -340,4 +341,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default Sentry.withProfiler(NavBar, { name: 'Navbar' });
