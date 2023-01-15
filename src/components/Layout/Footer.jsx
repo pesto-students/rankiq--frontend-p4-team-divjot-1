@@ -10,6 +10,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YoutubeIcon from '@mui/icons-material/YouTube';
 import TelegramIcon from '@mui/icons-material/Telegram';
+import * as Sentry from '@sentry/react';
 
 const footerItems = ['Support', 'Privacy', 'FAQs'];
 
@@ -122,4 +123,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default Sentry.withProfiler(Footer, { name: 'Footer' });

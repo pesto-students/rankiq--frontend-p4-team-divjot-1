@@ -1,4 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+
+import * as Sentry from '@sentry/react';
 import { SERVER_BASE_API, USER_API } from '../constants/endpoints';
 
 const accessToken = localStorage.getItem('accessToken')
@@ -33,6 +35,7 @@ export const signInUser = createAsyncThunk(
       const err = new Error(responseData?.message);
       err.response = res;
       err.status = res.status;
+      Sentry.captureException(err);
       throw err;
     }
     const { accessToken: token, ...dataToLog } = responseData;
@@ -59,6 +62,7 @@ export const signUpUser = createAsyncThunk(
       const err = new Error(message || res);
       err.response = res;
       err.status = res.status;
+      Sentry.captureException(err);
       throw err;
     }
     return responseData;

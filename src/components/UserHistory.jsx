@@ -11,6 +11,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
+import * as Sentry from '@sentry/react';
 import { isEmpty } from 'lodash';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -194,4 +195,4 @@ function UserHistory() {
   );
 }
 
-export default UserHistory;
+export default Sentry.withProfiler(UserHistory, { name: 'UserHistory' });

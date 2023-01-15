@@ -7,6 +7,7 @@ import Divider from '@mui/material/Divider';
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 import Alert from '@mui/material/Alert';
+import * as Sentry from '@sentry/react';
 import { isEmpty } from 'lodash';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
@@ -16,6 +17,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate, Link as RouterLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTheme } from '@emotion/react';
+import CenterCircularProgress from './CenterCircularProgress';
 import { REGEX } from '../constants';
 import { signUpUser } from '../ducks/auth';
 import { authDataSelector, accessTokenSelector } from '../selectors';
@@ -114,6 +116,7 @@ function SignUp() {
   };
   return (
     <Container maxWidth="md">
+      {loading && <CenterCircularProgress />}
       <StyledCard
         sx={{
           padding: { xs: '2rem 1rem', sm: '2rem' },
@@ -258,4 +261,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default Sentry.withProfiler(SignUp, { name: 'Signup' });

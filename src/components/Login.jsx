@@ -11,11 +11,13 @@ import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 import Card from '@mui/material/Card';
 import Alert from '@mui/material/Alert';
+import * as Sentry from '@sentry/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, Link as RouterLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { isEmpty } from 'lodash';
 import { REGEX } from '../constants';
+import CenterCircularProgress from './CenterCircularProgress';
 import { signInUser } from '../ducks/auth';
 import { accessTokenSelector, authDataSelector } from '../selectors';
 
@@ -76,6 +78,7 @@ function Login() {
 
   return (
     <Container maxWidth="sm">
+      {loading && <CenterCircularProgress />}
       <StyledCard
         sx={{
           padding: { xs: '2rem 1rem', sm: '2rem' },
@@ -187,4 +190,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Sentry.withProfiler(Login, { name: 'Login' });
