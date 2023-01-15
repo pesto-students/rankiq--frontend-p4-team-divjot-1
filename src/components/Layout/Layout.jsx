@@ -14,6 +14,7 @@ import DashBoard from '../DashBoard';
 import Result from '../Result';
 import FAQsCmp from '../FAQsCmp';
 import ContactUS from '../ContactUs';
+import ResetPassword from '../ResetPassword';
 
 function Layout() {
   const SentryRoutes = Sentry.withSentryReactRouterV6Routing(Routes);
@@ -36,6 +37,7 @@ function Layout() {
               <SentryRoutes>
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
+                <Route path="/resetPassword" element={<ResetPassword />} />
                 <Route path="/dashboard" element={<DashBoard />} />
                 <Route path="/result" element={<Result />} />
                 <Route path="/faqs" element={<FAQsCmp />} />
