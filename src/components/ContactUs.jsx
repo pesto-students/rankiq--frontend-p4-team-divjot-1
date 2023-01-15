@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
+import * as Sentry from '@sentry/react';
 // cmp
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
@@ -184,4 +185,4 @@ function ContactUS() {
   );
 }
 
-export default ContactUS;
+export default Sentry.withProfiler(ContactUS, { name: 'ContactUs' });

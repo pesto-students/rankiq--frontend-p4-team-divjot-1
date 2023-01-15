@@ -13,6 +13,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
+import * as Sentry from '@sentry/react';
 import GaugeChart from 'react-gauge-chart';
 import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types';
@@ -223,4 +224,4 @@ function Result() {
   );
 }
 
-export default Result;
+export default Sentry.withProfiler(Result, { name: 'Result' });

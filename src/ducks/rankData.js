@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import * as Sentry from '@sentry/react';
 import { SERVER_BASE_API, EXAM_API } from '../constants/endpoints';
 
 const InitialState = {
@@ -26,6 +27,7 @@ export const getStudentRank = createAsyncThunk(
       const err = new Error(message || res);
       err.response = res;
       err.status = res.status;
+      Sentry.captureException(err);
       throw err;
     }
     return responseData;

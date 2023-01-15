@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import { isEmpty } from 'lodash';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import * as Sentry from '@sentry/react';
 import { getStudentRank } from '../ducks/rankData';
 import { rankDataSelector } from '../selectors';
 
@@ -98,4 +99,4 @@ function Rank({ rollNumber }) {
 Rank.propTypes = {
   rollNumber: PropTypes.string.isRequired,
 };
-export default Rank;
+export default Sentry.withProfiler(Rank, { name: 'Rank' });

@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box';
 import { ThemeProvider } from '@mui/material/styles';
 import { Route, Routes, BrowserRouter, Navigate } from 'react-router-dom';
+import * as Sentry from '@sentry/react';
 import theme from '../../theme/theme';
 // cmp
 import ProtectedRoute from '../../routing/ProtectedRoute';
@@ -15,6 +16,7 @@ import FAQsCmp from '../FAQsCmp';
 import ContactUS from '../ContactUs';
 
 function Layout() {
+  const SentryRoutes = Sentry.withSentryReactRouterV6Routing(Routes);
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
@@ -31,7 +33,7 @@ function Layout() {
                 alignItems: 'center',
               }}
             >
-              <Routes>
+              <SentryRoutes>
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/dashboard" element={<DashBoard />} />
@@ -45,7 +47,7 @@ function Layout() {
                   path="*"
                   element={<Navigate to="/dashboard" replace />}
                 />
-              </Routes>
+              </SentryRoutes>
             </Box>
           </main>
 
@@ -56,4 +58,4 @@ function Layout() {
   );
 }
 
-export default Layout;
+export default Sentry.withProfiler(Layout, { name: 'Layout' });
