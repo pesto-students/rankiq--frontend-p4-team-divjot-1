@@ -1,4 +1,8 @@
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, Link as RouterLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+// @mui
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -12,9 +16,6 @@ import Link from '@mui/material/Link';
 import Card from '@mui/material/Card';
 import Alert from '@mui/material/Alert';
 import * as Sentry from '@sentry/react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, Link as RouterLink } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import { isEmpty } from 'lodash';
 import { REGEX } from '../constants';
 import CenterCircularProgress from './CenterCircularProgress';
@@ -24,6 +25,7 @@ import {
   authDataSelector,
   userEmailSelector,
 } from '../selectors';
+import ResetPasswordDialog from './ResetPasswordDialog';
 
 const StyledLink = styled(Link)({
   textDecoration: 'none',
@@ -37,10 +39,12 @@ function Login() {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [showError, setShowError] = useState(false);
   const { error, loading } = useSelector(authDataSelector);
   const accessToken = useSelector(accessTokenSelector);
   const email = useSelector(userEmailSelector);
+
+  const [showError, setShowError] = useState(false);
+  const [openResetDialog, setOpenResetDialog] = useState(false);
 
   useEffect(() => {
     if (!isEmpty(accessToken)) {
@@ -173,6 +177,19 @@ function Login() {
                 >
                   {t('login.signup')}
                 </StyledLink>
+
+                <Typography variant="body1" textAlign="center">
+                  |
+                </Typography>
+
+                <StyledLink
+                  component={RouterLink}
+                  variant="body1"
+                  color="primary.main"
+                  onClick={() => setOpenResetDialog(true)}
+                >
+                  {t('login.resetPassword')}
+                </StyledLink>
               </Box>
             </Grid>
 
@@ -195,6 +212,10 @@ function Login() {
           </Grid>
         </form>
       </StyledCard>
+      <ResetPasswordDialog
+        open={openResetDialog}
+        handleClose={() => setOpenResetDialog(false)}
+      />
     </Container>
   );
 }
