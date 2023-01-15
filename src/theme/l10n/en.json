@@ -36,9 +36,10 @@
 		"email":"Email Id",
 		"password":"Password",
 		"notOnRankiq":"Not on RankIQ yet ?",
-		"signup":"Sign UP",
+		"signup":"Sign Up",
 		"or":"OR",
-		"guest":"Continue as Guest"
+		"guest":"Continue as Guest",
+		"resetPassword": "Forgot Password"
 	},
 	"signup":{
 		"email":"Email Id",
@@ -49,6 +50,11 @@
 		"already":"Already signed up ? ",
 		"login":"Login",
 		"guest":"Continue as Guest"
+	},
+	"resetPassword": {
+		"newPassword": "New Password",
+		"confirmPassword": "Confirm Password",
+		"updatePassword": "Update Password"
 	},
 	"contactUs": {
 		"pageTitle": "Contact Us",
@@ -84,7 +90,7 @@
 		"email":"Invalid Email",
 		"password":"min 6 char with combination of letter,number and special char needed",
 		"required":"This field is required",
-		"cpassword":"Password didnt match"
+		"cpassword":"Passwords do not match"
 	},
 	"exam":{
 		"rrb":{

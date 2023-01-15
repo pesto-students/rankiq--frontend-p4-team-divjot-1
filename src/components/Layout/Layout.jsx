@@ -13,6 +13,7 @@ import DashBoard from '../DashBoard';
 import Result from '../Result';
 import FAQsCmp from '../FAQsCmp';
 import ContactUS from '../ContactUs';
+import ResetPassword from '../ResetPassword';
 
 function Layout() {
   return (
@@ -34,6 +35,7 @@ function Layout() {
               <Routes>
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
+                <Route path="/resetPassword" element={<ResetPassword />} />
                 <Route path="/dashboard" element={<DashBoard />} />
                 <Route path="/result" element={<Result />} />
                 <Route path="/faqs" element={<FAQsCmp />} />
