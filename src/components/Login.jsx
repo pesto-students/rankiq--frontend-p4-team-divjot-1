@@ -20,8 +20,11 @@ import { isEmpty } from 'lodash';
 import { REGEX } from '../constants';
 import CenterCircularProgress from './CenterCircularProgress';
 import { signInUser } from '../ducks/auth';
-import { accessTokenSelector, authDataSelector } from '../selectors';
-// cmp
+import {
+  accessTokenSelector,
+  authDataSelector,
+  userEmailSelector,
+} from '../selectors';
 import ResetPasswordDialog from './ResetPasswordDialog';
 
 const StyledLink = styled(Link)({
@@ -38,6 +41,7 @@ function Login() {
   const navigate = useNavigate();
   const { error, loading } = useSelector(authDataSelector);
   const accessToken = useSelector(accessTokenSelector);
+  const email = useSelector(userEmailSelector);
 
   const [showError, setShowError] = useState(false);
   const [openResetDialog, setOpenResetDialog] = useState(false);
@@ -46,7 +50,10 @@ function Login() {
     if (!isEmpty(accessToken)) {
       navigate('/dashboard');
     }
-  }, [navigate, accessToken]);
+    if (email) {
+      Sentry.setUser({ email });
+    }
+  }, [navigate, accessToken, email]);
   const { control, formState, reset, getValues } = useForm({
     mode: 'onBlur',
     defaultValues: { email: '', password: '' },
@@ -195,6 +202,7 @@ function Login() {
                 variant="contained"
                 fullWidth
                 onClick={() => {
+                  Sentry.setUser({ email: 'guest' });
                   navigate('/dashboard');
                 }}
               >

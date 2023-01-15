@@ -248,6 +248,7 @@ function SignUp() {
                 variant="contained"
                 fullWidth
                 onClick={() => {
+                  Sentry.setUser({ email: 'guest' });
                   navigate('/dashboard');
                 }}
               >

@@ -11,3 +11,7 @@ export const accessTokenSelector = createSelector(
 export const userNameSelector = createSelector(authDataSelector, (authData) =>
   get(authData, 'userInfo.firstName', '')
 );
+
+export const userEmailSelector = createSelector(authDataSelector, (authData) =>
+  get(authData, 'userInfo.email', '')
+);
