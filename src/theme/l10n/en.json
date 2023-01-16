@@ -26,6 +26,12 @@
 		"hi": "हिंदी",
 		"en": "English"
 	},
+	"footer": {
+		"rights": "All rights reserved",
+		"support": "Support",
+		"privacy": "Privacy",
+		"FAQs": "FAQs"
+	},
 	"dashboard": {
 		"rrcGroupD": "RRC Group D",
 		"answerUrl": "AnswerSheet Url",
@@ -166,5 +172,14 @@
 		"other": "Other Details",
 		"predicted": "Predicted Ranks",
 		"close": "Close"
+	},
+	"userHistory": {
+		"pageInfo": "Here you can find out history of all submissions you made",
+		"hi": "Hi {name}",
+		"checkRank": "Check Rank",
+		"predictedRanks": "Predicted Ranks",
+		"close": "Close",
+		"result": "Result",
+		"marks": "Marks: {marks}"
 	}
 }

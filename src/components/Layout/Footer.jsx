@@ -1,21 +1,29 @@
 import { useTheme } from '@emotion/react';
+import { useTranslation } from 'react-i18next';
+// @mui
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YoutubeIcon from '@mui/icons-material/YouTube';
 import TelegramIcon from '@mui/icons-material/Telegram';
+// logs
 import * as Sentry from '@sentry/react';
-
-const footerItems = ['Support', 'Privacy', 'FAQs'];
 
 function Footer() {
   const theme = useTheme();
+  const { t } = useTranslation();
+  const footerItems = [
+    t('footer.support'),
+    t('footer.privacy'),
+    t('footer.FAQs'),
+  ];
+
   return (
     <footer>
       <Box
@@ -52,7 +60,8 @@ function Footer() {
 
           <Grid item xs={12} sm={6} md={3}>
             <Typography noWrap textAlign="center">
-              &reg; {new Date().getFullYear()} RankIQ. All rights reserved
+              &reg; {new Date().getFullYear()}
+              {` RankIQ. ${t('footer.rights')}`}
             </Typography>
           </Grid>
 
