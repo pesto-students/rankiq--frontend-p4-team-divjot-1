@@ -1,0 +1,267 @@
+// Vitest Snapshot v1
+
+exports[`UserHistory- error in loading user history > should render without any errors 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiAlert-root MuiAlert-standardError MuiAlert-standard css-1hdyuqk-MuiPaper-root-MuiAlert-root"
+    role="alert"
+  >
+    <div
+      class="MuiAlert-icon css-1ytlwq5-MuiAlert-icon"
+    >
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="ErrorOutlineIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+        />
+      </svg>
+    </div>
+    <div
+      class="MuiAlert-message css-1pxa9xg-MuiAlert-message"
+    >
+      Test Error
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`UserHistory- error loading user history > should render without any errors 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-66s61j"
+    data-testid="circularProgressHistory"
+  >
+    <span
+      class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-osm0jy-MuiCircularProgress-root"
+      role="progressbar"
+      style="width: 40px; height: 40px;"
+    >
+      <svg
+        class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+        viewBox="22 22 44 44"
+      >
+        <circle
+          class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
+          cx="44"
+          cy="44"
+          fill="none"
+          r="20.2"
+          stroke-width="3.6"
+        />
+      </svg>
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`UserHistory- user history is loading > should render without any errors 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-66s61j"
+    data-testid="circularProgressHistory"
+  >
+    <span
+      class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-osm0jy-MuiCircularProgress-root"
+      role="progressbar"
+      style="width: 40px; height: 40px;"
+    >
+      <svg
+        class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+        viewBox="22 22 44 44"
+      >
+        <circle
+          class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
+          cx="44"
+          cy="44"
+          fill="none"
+          r="20.2"
+          stroke-width="3.6"
+        />
+      </svg>
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`UserHistory- user history is loading > should render without any errors 2`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-66s61j"
+    data-testid="circularProgressHistory"
+  >
+    <span
+      class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-osm0jy-MuiCircularProgress-root"
+      role="progressbar"
+      style="width: 40px; height: 40px;"
+    >
+      <svg
+        class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+        viewBox="22 22 44 44"
+      >
+        <circle
+          class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
+          cx="44"
+          cy="44"
+          fill="none"
+          r="20.2"
+          stroke-width="3.6"
+        />
+      </svg>
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`UserHistory- user history is present > should render without any errors 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
+  >
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-i3kqnq-MuiPaper-root-MuiCard-root"
+    >
+      <h4
+        class="MuiTypography-root MuiTypography-h4 css-5lbw0b-MuiTypography-root"
+      >
+        userHistory.hi
+      </h4>
+      <h5
+        class="MuiTypography-root MuiTypography-h5 css-17subee-MuiTypography-root"
+      >
+        userHistory.pageInfo
+      </h5>
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-4 css-1e6jbaj-MuiGrid-root"
+        >
+          <div
+            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-fa43rr-MuiPaper-root-MuiCard-root"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+            >
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-8 MuiGrid-grid-lg-7 css-1637pp4-MuiGrid-root"
+              >
+                <h6
+                  class="MuiTypography-root MuiTypography-h6 css-2ulfj5-MuiTypography-root"
+                >
+                  1234
+                </h6>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 MuiGrid-grid-lg-5 css-ht014-MuiGrid-root"
+              >
+                <h6
+                  class="MuiTypography-root MuiTypography-h6 css-1t3dpe8-MuiTypography-root"
+                >
+                  userHistory.marks
+                </h6>
+                <h6
+                  class="MuiTypography-root MuiTypography-h6 css-wm6e9j-MuiTypography-root"
+                >
+                  50
+                </h6>
+              </div>
+            </div>
+            <div
+              class="MuiBox-root css-9h4zif"
+            >
+              <button
+                class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge css-z634fe-MuiButtonBase-root-MuiButton-root"
+                data-testid="rank1234"
+                tabindex="0"
+                type="button"
+              >
+                userHistory.checkRank
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+              <button
+                class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeLarge MuiButton-outlinedSizeLarge MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeLarge MuiButton-outlinedSizeLarge css-uzt55w-MuiButtonBase-root-MuiButton-root"
+                data-testid="result1234"
+                tabindex="0"
+                type="button"
+              >
+                userHistory.result
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-4 css-1e6jbaj-MuiGrid-root"
+        >
+          <div
+            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-fa43rr-MuiPaper-root-MuiCard-root"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+            >
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-8 MuiGrid-grid-lg-7 css-1637pp4-MuiGrid-root"
+              >
+                <h6
+                  class="MuiTypography-root MuiTypography-h6 css-2ulfj5-MuiTypography-root"
+                >
+                  4567
+                </h6>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 MuiGrid-grid-lg-5 css-ht014-MuiGrid-root"
+              >
+                <h6
+                  class="MuiTypography-root MuiTypography-h6 css-1t3dpe8-MuiTypography-root"
+                >
+                  userHistory.marks
+                </h6>
+                <h6
+                  class="MuiTypography-root MuiTypography-h6 css-wm6e9j-MuiTypography-root"
+                >
+                  11
+                </h6>
+              </div>
+            </div>
+            <div
+              class="MuiBox-root css-9h4zif"
+            >
+              <button
+                class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge css-z634fe-MuiButtonBase-root-MuiButton-root"
+                data-testid="rank4567"
+                tabindex="0"
+                type="button"
+              >
+                userHistory.checkRank
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+              <button
+                class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeLarge MuiButton-outlinedSizeLarge MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeLarge MuiButton-outlinedSizeLarge css-uzt55w-MuiButtonBase-root-MuiButton-root"
+                data-testid="result4567"
+                tabindex="0"
+                type="button"
+              >
+                userHistory.result
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

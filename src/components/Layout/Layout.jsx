@@ -13,7 +13,7 @@ import Login from '../Login';
 import SignUp from '../Signup';
 import UserHistory from '../UserHistory';
 import DashBoard from '../DashBoard';
-import Result from '../Result';
+import { Result } from '../Result';
 import FAQsCmp from '../FAQsCmp';
 import ContactUS from '../ContactUs';
 import { userEmailSelector } from '../../selectors';

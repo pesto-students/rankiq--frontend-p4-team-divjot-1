@@ -1,0 +1,246 @@
+// Vitest Snapshot v1
+
+exports[`Login.jsx - when user is not logged in > should render without any errors 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiContainer-root MuiContainer-maxWidthSm css-cuefkz-MuiContainer-root"
+  >
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1or43t3-MuiPaper-root-MuiCard-root"
+    >
+      <form>
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4 css-480o17-MuiGrid-root"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
+          >
+            <h4
+              class="MuiTypography-root MuiTypography-h4 css-149xwtl-MuiTypography-root"
+            >
+              generic.login
+            </h4>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
+          >
+            <div
+              class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+              data-testid="ipemail"
+            >
+              <label
+                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-required MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-1iuujq-MuiFormLabel-root-MuiInputLabel-root"
+                data-shrink="false"
+                for=":r0:"
+                id=":r0:-label"
+              >
+                login.email
+                <span
+                  aria-hidden="true"
+                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk css-wgai2y-MuiFormLabel-asterisk"
+                >
+                   *
+                </span>
+              </label>
+              <div
+                class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-xurl45-MuiInputBase-root-MuiOutlinedInput-root"
+              >
+                <input
+                  aria-invalid="false"
+                  class="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                  id=":r0:"
+                  name="email"
+                  required=""
+                  type="email"
+                  value=""
+                />
+                <fieldset
+                  aria-hidden="true"
+                  class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                >
+                  <legend
+                    class="css-yjsfm1"
+                  >
+                    <span>
+                      login.email *
+                    </span>
+                  </legend>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
+          >
+            <div
+              class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+              data-testid="ippassword"
+            >
+              <label
+                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-required MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-1iuujq-MuiFormLabel-root-MuiInputLabel-root"
+                data-shrink="false"
+                for=":r1:"
+                id=":r1:-label"
+              >
+                login.password
+                <span
+                  aria-hidden="true"
+                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk css-wgai2y-MuiFormLabel-asterisk"
+                >
+                   *
+                </span>
+              </label>
+              <div
+                class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-xurl45-MuiInputBase-root-MuiOutlinedInput-root"
+              >
+                <input
+                  aria-invalid="false"
+                  class="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                  id=":r1:"
+                  name="password"
+                  required=""
+                  type="password"
+                  value=""
+                />
+                <fieldset
+                  aria-hidden="true"
+                  class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                >
+                  <legend
+                    class="css-yjsfm1"
+                  >
+                    <span>
+                      login.password *
+                    </span>
+                  </legend>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 css-1osj8n2-MuiGrid-root"
+          >
+            <button
+              class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-fullWidth css-fjh6yo-MuiButtonBase-root-MuiButton-root"
+              data-testid="btnSubmit"
+              disabled=""
+              tabindex="-1"
+              type="submit"
+            >
+              generic.login
+            </button>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 css-1osj8n2-MuiGrid-root"
+          >
+            <button
+              class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeLarge MuiButton-outlinedSizeLarge MuiButton-fullWidth MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeLarge MuiButton-outlinedSizeLarge MuiButton-fullWidth css-i8s7vf-MuiButtonBase-root-MuiButton-root"
+              data-testid="btnreset"
+              tabindex="0"
+              type="button"
+            >
+              generic.reset
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
+          >
+            <div
+              class="MuiBox-root css-fxj1eo"
+            >
+              <p
+                class="MuiTypography-root MuiTypography-body1 css-1uwgr7b-MuiTypography-root"
+              >
+                login.notOnRankiq
+              </p>
+              <a
+                class="MuiTypography-root MuiTypography-body1 MuiLink-root MuiLink-underlineAlways css-1eui8x3-MuiTypography-root-MuiLink-root"
+                href="/signup"
+              >
+                login.signup
+              </a>
+              <p
+                class="MuiTypography-root MuiTypography-body1 css-1uwgr7b-MuiTypography-root"
+              >
+                |
+              </p>
+              <a
+                class="MuiTypography-root MuiTypography-body1 MuiLink-root MuiLink-underlineAlways css-1eui8x3-MuiTypography-root-MuiLink-root"
+                data-testid="forgotpwd"
+                href="/"
+              >
+                login.resetPassword
+              </a>
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
+            >
+              <div
+                class="MuiBox-root css-16q7dti"
+              >
+                <p
+                  class="MuiTypography-root MuiTypography-body1 css-1uwgr7b-MuiTypography-root"
+                >
+                  login.notOnRankiq
+                </p>
+                <a
+                  class="MuiTypography-root MuiTypography-body1 MuiLink-root MuiLink-underlineAlways css-1eui8x3-MuiTypography-root-MuiLink-root"
+                  href="/signup"
+                >
+                  login.signup
+                </a>
+              </div>
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
+            >
+              <div
+                class="MuiBox-root css-16q7dti"
+              >
+                <a
+                  class="MuiTypography-root MuiTypography-body1 MuiLink-root MuiLink-underlineAlways css-1eui8x3-MuiTypography-root-MuiLink-root"
+                  href="/"
+                >
+                  login.resetPassword
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
+          >
+            <div
+              class="MuiDivider-root MuiDivider-fullWidth MuiDivider-withChildren css-1ws8119-MuiDivider-root"
+              role="separator"
+            >
+              <span
+                class="MuiDivider-wrapper css-qywfm8-MuiDivider-wrapper"
+              >
+                login.or
+              </span>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
+          >
+            <button
+              class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-fullWidth MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-fullWidth css-fjh6yo-MuiButtonBase-root-MuiButton-root"
+              data-testid="btnGuest"
+              tabindex="0"
+              type="button"
+            >
+              login.guest
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;

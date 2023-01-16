@@ -19,6 +19,7 @@ import { useNavigate } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import { getUserHistory } from '../ducks/userHistory';
 import { saveExamData } from '../ducks/examInfo';
+import { logout } from '../ducks/auth';
 import {
   userHistorySelector,
   accessTokenSelector,
@@ -48,6 +49,13 @@ function UserHistory() {
     }
   }, []);
 
+  useEffect(() => {
+    if (error?.includes('Unauthorized')) {
+      dispatch(logout());
+      navigate('/login');
+    }
+  }, [error]);
+
   const handleClose = () => {
     setOpenRank(false);
   };
@@ -70,6 +78,7 @@ function UserHistory() {
       <Dialog open maxWidth="sm" fullWidth>
         <DialogContent>
           <Box
+            test-id="circularProgress"
             sx={{
               display: 'flex',
               alignItems: 'center',
@@ -87,6 +96,7 @@ function UserHistory() {
   if (loading) {
     return (
       <Box
+        data-testid="circularProgressHistory"
         sx={{
           display: 'flex',
           alignItems: 'center',
@@ -161,6 +171,7 @@ function UserHistory() {
                       <Button
                         size="large"
                         variant="contained"
+                        data-testid={`rank${rollNumber}`}
                         onClick={() => {
                           handleCheckRank(rollNumber);
                         }}
@@ -168,6 +179,7 @@ function UserHistory() {
                         {t('userHistory.checkRank')}
                       </Button>
                       <Button
+                        data-testid={`result${rollNumber}`}
                         size="large"
                         variant="outlined"
                         onClick={() => {
@@ -190,7 +202,12 @@ function UserHistory() {
           <Rank rollNumber={rollNo} />
         </DialogContent>
         <DialogActions disableSpacing>
-          <Button size="large" variant="contained" onClick={handleClose}>
+          <Button
+            size="large"
+            variant="contained"
+            data-testid="btnCloseRank"
+            onClick={handleClose}
+          >
             {t('userHistory.close')}
           </Button>
         </DialogActions>

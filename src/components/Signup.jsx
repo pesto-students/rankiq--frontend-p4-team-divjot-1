@@ -16,7 +16,6 @@ import { useController, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, Link as RouterLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { useTheme } from '@emotion/react';
 import CenterCircularProgress from './CenterCircularProgress';
 import { REGEX } from '../constants';
 import { signUpUser } from '../ducks/auth';
@@ -26,6 +25,9 @@ const StyledCard = styled(Card)(({ theme }) => ({
   backgroundColor: theme.palette.box.main,
 }));
 
+const StyledLink = styled(Link)(({ theme }) => ({
+  color: theme.palette.primary.main,
+}));
 function SignUp() {
   const dispatch = useDispatch();
   const { loading, error, success } = useSelector(authDataSelector);
@@ -33,8 +35,6 @@ function SignUp() {
   const [showSignupError, setSignUpError] = useState(false);
   const accessToken = useSelector(accessTokenSelector);
   const navigate = useNavigate();
-  const theme = useTheme();
-
   useEffect(() => {
     if (success) {
       navigate('/login');
@@ -133,6 +133,7 @@ function SignUp() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                data-testid="ipemail"
                 {...userNameProps}
                 inputRef={ref}
                 error={invalid}
@@ -145,6 +146,7 @@ function SignUp() {
             </Grid>
             <Grid item xs={12} md={6}>
               <TextField
+                data-testid="ippassword"
                 {...passwordProps}
                 inputRef={passwordRef}
                 error={passwordInvalid}
@@ -157,6 +159,7 @@ function SignUp() {
             </Grid>
             <Grid item xs={12} md={6}>
               <TextField
+                data-testid="ipcpassword"
                 {...cPasswordProps}
                 inputRef={cPasswordRef}
                 error={cPasswordInvalid}
@@ -169,6 +172,7 @@ function SignUp() {
             </Grid>
             <Grid item xs={12} md={6}>
               <TextField
+                data-testid="ipfname"
                 {...fNameProps}
                 inputRef={fNameRef}
                 error={fNameInvalid}
@@ -181,6 +185,7 @@ function SignUp() {
             </Grid>
             <Grid item xs={12} md={6}>
               <TextField
+                data-testid="iplname"
                 {...lNameProps}
                 inputRef={lNameRef}
                 label={t('signup.lname')}
@@ -190,6 +195,7 @@ function SignUp() {
             </Grid>
             <Grid item xs={6}>
               <Button
+                data-testid="btnSubmit"
                 size="large"
                 variant="contained"
                 disabled={!formState.isValid || loading}
@@ -205,6 +211,7 @@ function SignUp() {
             </Grid>
             <Grid item xs={6}>
               <Button
+                data-aq="btnreset"
                 size="large"
                 variant="outlined"
                 onClick={handleReset}
@@ -229,14 +236,9 @@ function SignUp() {
                 <Typography variant="body1" textAlign="center">
                   {t('signup.already')}
                 </Typography>
-                <Link
-                  component={RouterLink}
-                  variant="body1"
-                  color={theme.palette.primary.main}
-                  to="/login"
-                >
+                <StyledLink component={RouterLink} variant="body1" to="/login">
                   {t('signup.login')}
-                </Link>
+                </StyledLink>
               </Box>
             </Grid>
             <Grid item xs={12}>
@@ -245,6 +247,7 @@ function SignUp() {
             <Grid item xs={12}>
               <Button
                 size="large"
+                data-testid="btnGuest"
                 variant="contained"
                 fullWidth
                 onClick={() => {

@@ -1,0 +1,613 @@
+// Vitest Snapshot v1
+
+exports[`Dashboard.jsx > should render without any errors 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiContainer-root MuiContainer-maxWidthXl css-19r6kue-MuiContainer-root"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-spacing-md-3 css-1xgjpwf-MuiGrid-root"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 MuiGrid-grid-sm-6 MuiGrid-grid-md-6 css-1awfg7w-MuiGrid-root"
+      >
+        <div
+          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-8scocq-MuiPaper-root-MuiCard-root"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-12rc5ck-MuiGrid-root"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
+            >
+              <h4
+                class="MuiTypography-root MuiTypography-h4 css-149xwtl-MuiTypography-root"
+              >
+                dashboardInfo.title
+              </h4>
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
+            >
+              <h6
+                class="MuiTypography-root MuiTypography-subtitle1 css-16ddr8c-MuiTypography-root"
+              >
+                dashboardInfo.subTitle
+              </h6>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-zb04wy-MuiGrid-root"
+          >
+            <h5
+              class="MuiTypography-root MuiTypography-h5 css-a6g44b-MuiTypography-root"
+            >
+              dashboardInfo.features
+            </h5>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 css-1lj5egr-MuiGrid-root"
+            >
+              <div
+                class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1v96e9c-MuiPaper-root-MuiCard-root"
+              >
+                <div
+                  class="MuiCardHeader-root css-185gdzj-MuiCardHeader-root"
+                >
+                  <div
+                    class="MuiCardHeader-avatar css-1ssile9-MuiCardHeader-avatar"
+                  >
+                    <div
+                      class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-1q3qpgv-MuiAvatar-root"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="LeaderboardIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M7.5 21H2V9h5.5v12zm7.25-18h-5.5v18h5.5V3zM22 11h-5.5v10H22V11z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+                  >
+                    <h5
+                      class="MuiTypography-root MuiTypography-h5 css-18es85x-MuiTypography-root"
+                    >
+                      dashboardInfo.featureList.rank
+                    </h5>
+                  </div>
+                </div>
+                <div
+                  class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+                >
+                  <p
+                    class="MuiTypography-root MuiTypography-body1 css-1t7fja7-MuiTypography-root"
+                  >
+                    dashboardInfo.featureList.rankSubtitle
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 css-1lj5egr-MuiGrid-root"
+            >
+              <div
+                class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1v96e9c-MuiPaper-root-MuiCard-root"
+              >
+                <div
+                  class="MuiCardHeader-root css-185gdzj-MuiCardHeader-root"
+                >
+                  <div
+                    class="MuiCardHeader-avatar css-1ssile9-MuiCardHeader-avatar"
+                  >
+                    <div
+                      class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-1q3qpgv-MuiAvatar-root"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-tzssek-MuiSvgIcon-root"
+                        data-testid="QueryStatsIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M19.88 18.47c.44-.7.7-1.51.7-2.39 0-2.49-2.01-4.5-4.5-4.5s-4.5 2.01-4.5 4.5 2.01 4.5 4.49 4.5c.88 0 1.7-.26 2.39-.7L21.58 23 23 21.58l-3.12-3.11zm-3.8.11c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zm-.36-8.5c-.74.02-1.45.18-2.1.45l-.55-.83-3.8 6.18-3.01-3.52-3.63 5.81L1 17l5-8 3 3.5L13 6l2.72 4.08zm2.59.5c-.64-.28-1.33-.45-2.05-.49L21.38 2 23 3.18l-4.69 7.4z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+                  >
+                    <h5
+                      class="MuiTypography-root MuiTypography-h5 css-18es85x-MuiTypography-root"
+                    >
+                      dashboardInfo.featureList.performance
+                    </h5>
+                  </div>
+                </div>
+                <div
+                  class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+                >
+                  <p
+                    class="MuiTypography-root MuiTypography-body1 css-1t7fja7-MuiTypography-root"
+                  >
+                    dashboardInfo.featureList.performanceSubtitle
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 css-1lj5egr-MuiGrid-root"
+            >
+              <div
+                class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1v96e9c-MuiPaper-root-MuiCard-root"
+              >
+                <div
+                  class="MuiCardHeader-root css-185gdzj-MuiCardHeader-root"
+                >
+                  <div
+                    class="MuiCardHeader-avatar css-1ssile9-MuiCardHeader-avatar"
+                  >
+                    <div
+                      class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-1q3qpgv-MuiAvatar-root"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-tzssek-MuiSvgIcon-root"
+                        data-testid="FormatAlignLeftIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M15 15H3v2h12v-2zm0-8H3v2h12V7zM3 13h18v-2H3v2zm0 8h18v-2H3v2zM3 3v2h18V3H3z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+                  >
+                    <h5
+                      class="MuiTypography-root MuiTypography-h5 css-18es85x-MuiTypography-root"
+                    >
+                      dashboardInfo.featureList.normalisation
+                    </h5>
+                  </div>
+                </div>
+                <div
+                  class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+                >
+                  <p
+                    class="MuiTypography-root MuiTypography-body1 css-1t7fja7-MuiTypography-root"
+                  >
+                    dashboardInfo.featureList.normalisationSubtitle
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 MuiGrid-grid-sm-6 MuiGrid-grid-md-6 css-1rytnwv-MuiGrid-root"
+      >
+        <div
+          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-gnsdz1-MuiPaper-root-MuiCard-root"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-mqf2e0-MuiGrid-root"
+          >
+            <h4
+              class="MuiTypography-root MuiTypography-h4 css-149xwtl-MuiTypography-root"
+            >
+              dashboard.rrcGroupD
+            </h4>
+          </div>
+          <form>
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
+            >
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
+              >
+                <div
+                  class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+                  data-testid="ipUrl"
+                >
+                  <label
+                    class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-1iuujq-MuiFormLabel-root-MuiInputLabel-root"
+                    data-shrink="false"
+                    for=":r0:"
+                    id=":r0:-label"
+                  >
+                    dashboard.answerUrl
+                  </label>
+                  <div
+                    class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-xurl45-MuiInputBase-root-MuiOutlinedInput-root"
+                  >
+                    <input
+                      aria-invalid="false"
+                      class="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                      id=":r0:"
+                      name="examUrl"
+                      type="text"
+                      value=""
+                    />
+                    <fieldset
+                      aria-hidden="true"
+                      class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                    >
+                      <legend
+                        class="css-yjsfm1"
+                      >
+                        <span>
+                          dashboard.answerUrl
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
+              >
+                <div
+                  class="MuiAutocomplete-root MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1qqsdnr-MuiAutocomplete-root"
+                >
+                  <div
+                    class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
+                    data-testid="ipcategory"
+                  >
+                    <label
+                      class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-required MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-1iuujq-MuiFormLabel-root-MuiInputLabel-root"
+                      data-shrink="false"
+                      for=":r1:"
+                      id=":r1:-label"
+                    >
+                      dashboard.category
+                      <span
+                        aria-hidden="true"
+                        class="MuiFormLabel-asterisk MuiInputLabel-asterisk css-wgai2y-MuiFormLabel-asterisk"
+                      >
+                         *
+                      </span>
+                    </label>
+                    <div
+                      class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-1vhibdx-MuiInputBase-root-MuiOutlinedInput-root"
+                    >
+                      <input
+                        aria-autocomplete="list"
+                        aria-expanded="false"
+                        aria-invalid="false"
+                        autocapitalize="none"
+                        autocomplete="off"
+                        class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+                        id=":r1:"
+                        required=""
+                        role="combobox"
+                        spellcheck="false"
+                        type="text"
+                        value=""
+                      />
+                      <div
+                        class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment"
+                      >
+                        <button
+                          aria-label="Clear"
+                          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-clearIndicator css-1glvl0p-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-clearIndicator"
+                          tabindex="-1"
+                          title="Clear"
+                          type="button"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                            data-testid="CloseIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                            />
+                          </svg>
+                          <span
+                            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                          />
+                        </button>
+                        <button
+                          aria-label="Open"
+                          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+                          tabindex="-1"
+                          title="Open"
+                          type="button"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                            data-testid="ArrowDropDownIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M7 10l5 5 5-5z"
+                            />
+                          </svg>
+                          <span
+                            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                          />
+                        </button>
+                      </div>
+                      <fieldset
+                        aria-hidden="true"
+                        class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                      >
+                        <legend
+                          class="css-yjsfm1"
+                        >
+                          <span>
+                            dashboard.category *
+                          </span>
+                        </legend>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
+              >
+                <div
+                  class="MuiAutocomplete-root MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1qqsdnr-MuiAutocomplete-root"
+                >
+                  <div
+                    class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
+                    data-testid="ipreservation"
+                  >
+                    <label
+                      class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-required MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-1iuujq-MuiFormLabel-root-MuiInputLabel-root"
+                      data-shrink="false"
+                      for=":r3:"
+                      id=":r3:-label"
+                    >
+                      dashboard.reservation
+                      <span
+                        aria-hidden="true"
+                        class="MuiFormLabel-asterisk MuiInputLabel-asterisk css-wgai2y-MuiFormLabel-asterisk"
+                      >
+                         *
+                      </span>
+                    </label>
+                    <div
+                      class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-1vhibdx-MuiInputBase-root-MuiOutlinedInput-root"
+                    >
+                      <input
+                        aria-autocomplete="list"
+                        aria-expanded="false"
+                        aria-invalid="false"
+                        autocapitalize="none"
+                        autocomplete="off"
+                        class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+                        id=":r3:"
+                        required=""
+                        role="combobox"
+                        spellcheck="false"
+                        type="text"
+                        value=""
+                      />
+                      <div
+                        class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment"
+                      >
+                        <button
+                          aria-label="Clear"
+                          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-clearIndicator css-1glvl0p-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-clearIndicator"
+                          tabindex="-1"
+                          title="Clear"
+                          type="button"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                            data-testid="CloseIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                            />
+                          </svg>
+                          <span
+                            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                          />
+                        </button>
+                        <button
+                          aria-label="Open"
+                          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+                          tabindex="-1"
+                          title="Open"
+                          type="button"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                            data-testid="ArrowDropDownIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M7 10l5 5 5-5z"
+                            />
+                          </svg>
+                          <span
+                            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                          />
+                        </button>
+                      </div>
+                      <fieldset
+                        aria-hidden="true"
+                        class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                      >
+                        <legend
+                          class="css-yjsfm1"
+                        >
+                          <span>
+                            dashboard.reservation *
+                          </span>
+                        </legend>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
+              >
+                <div
+                  class="MuiAutocomplete-root MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1qqsdnr-MuiAutocomplete-root"
+                >
+                  <div
+                    class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
+                    data-testid="ipzone"
+                  >
+                    <label
+                      class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-required MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-1iuujq-MuiFormLabel-root-MuiInputLabel-root"
+                      data-shrink="false"
+                      for=":r5:"
+                      id=":r5:-label"
+                    >
+                      dashboard.zone
+                      <span
+                        aria-hidden="true"
+                        class="MuiFormLabel-asterisk MuiInputLabel-asterisk css-wgai2y-MuiFormLabel-asterisk"
+                      >
+                         *
+                      </span>
+                    </label>
+                    <div
+                      class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-1vhibdx-MuiInputBase-root-MuiOutlinedInput-root"
+                    >
+                      <input
+                        aria-autocomplete="list"
+                        aria-expanded="false"
+                        aria-invalid="false"
+                        autocapitalize="none"
+                        autocomplete="off"
+                        class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+                        id=":r5:"
+                        required=""
+                        role="combobox"
+                        spellcheck="false"
+                        type="text"
+                        value=""
+                      />
+                      <div
+                        class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment"
+                      >
+                        <button
+                          aria-label="Clear"
+                          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-clearIndicator css-1glvl0p-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-clearIndicator"
+                          tabindex="-1"
+                          title="Clear"
+                          type="button"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                            data-testid="CloseIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                            />
+                          </svg>
+                          <span
+                            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                          />
+                        </button>
+                        <button
+                          aria-label="Open"
+                          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+                          tabindex="-1"
+                          title="Open"
+                          type="button"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                            data-testid="ArrowDropDownIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M7 10l5 5 5-5z"
+                            />
+                          </svg>
+                          <span
+                            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                          />
+                        </button>
+                      </div>
+                      <fieldset
+                        aria-hidden="true"
+                        class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                      >
+                        <legend
+                          class="css-yjsfm1"
+                        >
+                          <span>
+                            dashboard.zone *
+                          </span>
+                        </legend>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 css-1osj8n2-MuiGrid-root"
+              >
+                <button
+                  class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-fullWidth MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-fullWidth css-fjh6yo-MuiButtonBase-root-MuiButton-root"
+                  data-testid="btnSubmit"
+                  tabindex="0"
+                  type="button"
+                >
+                  generic.submit
+                  <span
+                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                  />
+                </button>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 css-1osj8n2-MuiGrid-root"
+              >
+                <button
+                  class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeLarge MuiButton-outlinedSizeLarge MuiButton-fullWidth MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeLarge MuiButton-outlinedSizeLarge MuiButton-fullWidth css-i8s7vf-MuiButtonBase-root-MuiButton-root"
+                  data-testid="btnreset"
+                  tabindex="0"
+                  type="button"
+                >
+                  generic.reset
+                  <span
+                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                  />
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

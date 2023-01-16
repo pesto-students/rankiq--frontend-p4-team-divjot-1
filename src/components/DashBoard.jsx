@@ -102,6 +102,7 @@ function DashBoard() {
                       fieldState: { invalid, error },
                     }) => (
                       <TextField
+                        data-testid="ipUrl"
                         label={t('dashboard.answerUrl')}
                         fullWidth
                         error={invalid}
@@ -136,6 +137,7 @@ function DashBoard() {
                         }
                         renderInput={(params) => (
                           <TextField
+                            data-testid="ipcategory"
                             {...params}
                             label={t('dashboard.category')}
                             margin="normal"
@@ -174,6 +176,7 @@ function DashBoard() {
                         }
                         renderInput={(params) => (
                           <TextField
+                            data-testid="ipreservation"
                             {...params}
                             label={t('dashboard.reservation')}
                             margin="normal"
@@ -212,6 +215,7 @@ function DashBoard() {
                         }
                         renderInput={(params) => (
                           <TextField
+                            data-testid="ipzone"
                             {...params}
                             label={t('dashboard.zone')}
                             margin="normal"
@@ -228,6 +232,7 @@ function DashBoard() {
                 <Grid item xs={6}>
                   <Button
                     size="large"
+                    data-testid="btnSubmit"
                     variant="contained"
                     fullWidth
                     disabled={!isEmpty(errors) || loading}
@@ -238,6 +243,7 @@ function DashBoard() {
                 </Grid>
                 <Grid item xs={6}>
                   <Button
+                    data-testid="btnreset"
                     size="large"
                     variant="outlined"
                     onClick={handleReset}

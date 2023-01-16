@@ -1,4 +1,3 @@
-import { useTheme } from '@emotion/react';
 import { useTranslation } from 'react-i18next';
 // @mui
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,7 +15,6 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import * as Sentry from '@sentry/react';
 
 function Footer() {
-  const theme = useTheme();
   const { t } = useTranslation();
   const footerItems = [
     t('footer.support'),
@@ -30,10 +28,7 @@ function Footer() {
         sx={{
           backgroundColor: 'primary.main',
           color: 'text.navFooter',
-          height: '40px',
-          [theme.breakpoints.down('md')]: {
-            height: 'auto',
-          },
+          height: { md: '2.5rem', sm: 'auto' },
         }}
       >
         <Grid
@@ -46,9 +41,7 @@ function Footer() {
                 display: 'flex',
                 alignItems: 'baseline',
                 columnGap: '0.25rem',
-                [theme.breakpoints.down('sm')]: {
-                  justifyContent: 'center',
-                },
+                justifyContent: { md: 'normal', xs: 'center' },
               }}
             >
               <FontAwesomeIcon icon="fa-solid fa-ranking-star" size="lg" />
@@ -83,10 +76,7 @@ function Footer() {
             <Box
               sx={{
                 display: 'flex',
-                justifyContent: 'center',
-                [theme.breakpoints.up('md')]: {
-                  justifyContent: 'flex-end',
-                },
+                justifyContent: { lg: 'flex-end', xs: 'center' },
               }}
             >
               <Button

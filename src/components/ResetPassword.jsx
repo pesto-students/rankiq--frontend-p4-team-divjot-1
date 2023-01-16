@@ -123,6 +123,7 @@ function ResetPassword() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                data-testid="ippassword"
                 {...newPasswordProps}
                 inputRef={newPasswordRef}
                 error={newPasswordInvalid}
@@ -138,6 +139,7 @@ function ResetPassword() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                data-testid="ipcpassword"
                 {...confirmPasswordProps}
                 inputRef={confirmPasswordRef}
                 error={confirmPasswordInvalid}
@@ -154,6 +156,7 @@ function ResetPassword() {
             </Grid>
             <Grid item xs={6}>
               <Button
+                data-testid="btnSubmit"
                 size="large"
                 variant="contained"
                 disabled={!formState.isValid || loading}
@@ -171,6 +174,7 @@ function ResetPassword() {
             <Grid item xs={6}>
               <Button
                 size="large"
+                data-testid="btnReset"
                 variant="outlined"
                 onClick={handleReset}
                 fullWidth
