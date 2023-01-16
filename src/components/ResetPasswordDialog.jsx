@@ -80,6 +80,7 @@ function ResetPasswordDialog({ open, handleClose }) {
           <DialogContentText>{t('resetPassword.subtitle')}</DialogContentText>
           <form>
             <TextField
+              data-testid="ipemail"
               {...userNameProps}
               inputRef={ref}
               error={invalid}
@@ -96,6 +97,7 @@ function ResetPasswordDialog({ open, handleClose }) {
         <DialogActions>
           <Button onClick={handleClose}>{t('generic.cancel')}</Button>
           <Button
+            data-testid="btnResetPwd"
             disabled={invalid || getValues('email') === '' || loading}
             onClick={handleResetSubmit}
           >

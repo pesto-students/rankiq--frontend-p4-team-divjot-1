@@ -30,7 +30,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
   backgroundColor: theme.palette.box.main,
 }));
 
-function Chart({ id, val, maxVal, negative }) {
+export function Chart({ id, val, maxVal, negative }) {
   let colorsArray = ['#FF0000', '#FFFF00', '#00FF00'];
   if (negative) {
     colorsArray = colorsArray.reverse();
@@ -76,7 +76,7 @@ OtherDetailsContent.propTypes = {
   content: PropTypes.string.isRequired,
 };
 
-function Result() {
+function ResultComponent() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const isExamInfoPresent = useSelector(isExamInfoPresentSelector);
@@ -224,4 +224,4 @@ function Result() {
   );
 }
 
-export default Sentry.withProfiler(Result, { name: 'Result' });
+export const Result = Sentry.withProfiler(ResultComponent, { name: 'Result' });

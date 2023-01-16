@@ -105,6 +105,7 @@ function Login() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                data-testid="ipemail"
                 {...userNameProps}
                 inputRef={ref}
                 error={invalid}
@@ -117,6 +118,7 @@ function Login() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                data-testid="ippassword"
                 {...passwordProps}
                 inputRef={passwordRef}
                 error={passwordInvalid}
@@ -129,6 +131,7 @@ function Login() {
             </Grid>
             <Grid item xs={6}>
               <Button
+                data-testid="btnSubmit"
                 size="large"
                 variant="contained"
                 disabled={!formState.isValid || loading}
@@ -146,6 +149,7 @@ function Login() {
             <Grid item xs={6}>
               <Button
                 size="large"
+                data-testid="btnreset"
                 variant="outlined"
                 onClick={handleReset}
                 fullWidth
@@ -183,6 +187,7 @@ function Login() {
                 </Typography>
 
                 <StyledLink
+                  data-testid="forgotpwd"
                   component={RouterLink}
                   variant="body1"
                   color="primary.main"
@@ -238,6 +243,7 @@ function Login() {
             <Grid item xs={12}>
               <Button
                 size="large"
+                data-testid="btnGuest"
                 variant="contained"
                 fullWidth
                 onClick={() => {

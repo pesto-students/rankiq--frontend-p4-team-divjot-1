@@ -25,7 +25,7 @@ function RankContent({ label, content }) {
 }
 RankContent.propTypes = {
   label: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
+  content: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
 };
 
 function Rank({ rollNumber }) {
@@ -51,6 +51,7 @@ function Rank({ rollNumber }) {
   if (loading) {
     return (
       <Box
+        data-testid="rankProgress"
         sx={{
           display: 'flex',
           alignItems: 'center',

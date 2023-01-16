@@ -9,7 +9,9 @@ function CenterCircularProgress() {
   return (
     <Dialog open>
       <DialogContent>
-        <CircularProgress />
+        <div data-testid="circularProgress">
+          <CircularProgress />
+        </div>
       </DialogContent>
     </Dialog>
   );
