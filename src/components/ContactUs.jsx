@@ -12,6 +12,7 @@ import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
+import CircularProgress from '@mui/material/CircularProgress';
 // services
 import { ERROR_MESSAGE } from '../constants';
 import { SERVER_BASE_API, FEEDBACK_API } from '../constants/endpoints';
@@ -196,7 +197,7 @@ function ContactUS() {
                 disabled={loading}
                 onClick={handleSubmit(handleSendFeedback)}
               >
-                {t('generic.submit')}
+                {loading ? <CircularProgress size={20} /> : t('generic.submit')}
               </Button>
             </Grid>
           </Grid>
@@ -211,9 +212,7 @@ function ContactUS() {
         autoHideDuration={6000}
         onClose={() => handleClose(false)}
       >
-        <Alert severity="error">
-          Could not send feedback. Please try again
-        </Alert>
+        <Alert severity="error">{t('contactUs.alert.error')}</Alert>
       </Snackbar>
       <Snackbar
         anchorOrigin={{
@@ -224,7 +223,7 @@ function ContactUS() {
         autoHideDuration={6000}
         onClose={() => handleClose(true)}
       >
-        <Alert severity="success">Fedback sent successfully</Alert>
+        <Alert severity="success">{t('contactUs.alert.success')}</Alert>
       </Snackbar>
     </Container>
   );

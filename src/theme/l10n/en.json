@@ -92,7 +92,11 @@
 		"lName": "Last Name",
 		"emailId": "Email Id",
 		"subject": "Subject",
-		"feedback": "Your Message"
+		"feedback": "Your Message",
+		"alert": {
+			"error": "Could not send feedback. Please try again",
+			"success": "Fedback sent successfully"
+		}
 	},
 	"FAQs": [
 		{
