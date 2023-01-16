@@ -1,13 +1,16 @@
 import { useEffect } from 'react';
-import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
+import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
+// @mui
 import Alert from '@mui/material/Alert';
+import Box from '@mui/material/Box';
+import CircularProgress from '@mui/material/CircularProgress';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+// services
+import * as Sentry from '@sentry/react';
 import { isEmpty } from 'lodash';
 import { useSelector, useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
-import * as Sentry from '@sentry/react';
 import { getStudentRank } from '../ducks/rankData';
 import { rankDataSelector } from '../selectors';
 
@@ -29,6 +32,7 @@ RankContent.propTypes = {
 };
 
 function Rank({ rollNumber }) {
+  const { t } = useTranslation();
   const { loading, data: rankData, error } = useSelector(rankDataSelector);
   const dispatch = useDispatch();
 
@@ -71,27 +75,42 @@ function Rank({ rollNumber }) {
       ) : (
         <Grid container rowSpacing={4}>
           <RankContent
-            label="Overall:-"
-            content={`${overall?.rank} out of ${overall?.total}`}
+            label={t('rank.overall.label')}
+            content={t('rank.overall.content', {
+              rank: overall?.rank,
+              total: overall?.total,
+            })}
           />
           <RankContent
-            label="Zone:-"
-            content={`${zone?.rank} out of ${zone?.total}`}
+            label={t('rank.zone.label')}
+            content={t('rank.zone.content', {
+              rank: zone?.rank,
+              total: zone?.total,
+            })}
           />
           <RankContent
-            label="Zone + Category:-"
-            content={`${zoneCategory?.rank} out of ${zoneCategory?.total}`}
+            label={t('rank.zoneCategory.label')}
+            content={t('rank.zoneCategory.content', {
+              rank: zoneCategory?.rank,
+              total: zoneCategory?.total,
+            })}
           />
           <RankContent
-            label="Zone + Shift:-"
-            content={`${zoneShift?.rank} out of ${zoneShift?.total}`}
+            label={t('rank.zoneShift.label')}
+            content={t('rank.zoneShift.content', {
+              rank: zoneShift?.rank,
+              total: zoneShift?.total,
+            })}
           />
           <RankContent
-            label="Zone + Shift + Category:-"
-            content={`${zoneShiftCategory?.rank} out of ${zoneShiftCategory?.total}`}
+            label={t('rank.zoneShiftCategory.label')}
+            content={t('rank.zoneShiftCategory.content', {
+              rank: zoneShiftCategory?.rank,
+              total: zoneShiftCategory?.total,
+            })}
           />
-          <RankContent label="Raw Marks:-" content={rawMarks} />
-          <RankContent label="Zone Selected:-" content={zoneSelected} />
+          <RankContent label={t('rank.rawMarks')} content={rawMarks} />
+          <RankContent label={t('rank.zoneSelected')} content={zoneSelected} />
         </Grid>
       )}
     </Box>
