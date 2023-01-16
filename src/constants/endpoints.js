@@ -17,3 +17,7 @@ export const EXAM_API = {
   RANK: 'exam/checkRank',
   HISTORY: 'exam/userExamHistory',
 };
+
+export const FEEDBACK_API = {
+  SEND: 'feedback/sendEmail',
+};
