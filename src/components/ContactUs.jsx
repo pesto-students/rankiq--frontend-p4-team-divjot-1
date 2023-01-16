@@ -196,7 +196,7 @@ function ContactUS() {
                 disabled={loading}
                 onClick={handleSubmit(handleSendFeedback)}
               >
-                Submit
+                {t('generic.submit')}
               </Button>
             </Grid>
           </Grid>

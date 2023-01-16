@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert';
@@ -31,6 +32,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
 }));
 
 function UserHistory() {
+  const { t } = useTranslation();
   const [openRank, setOpenRank] = useState(false);
   const [rollNo, setRollNo] = useState();
   const dispatch = useDispatch();
@@ -60,7 +62,7 @@ function UserHistory() {
       await dispatch(saveExamData({ examUrl: url, saveData: false })).unwrap();
       navigate('/result');
     } catch (e) {
-      console.log('error');
+      console.warn('error');
     }
   };
   if (examInfoLoading) {
@@ -112,9 +114,11 @@ function UserHistory() {
             padding: 2,
           }}
         >
-          <Typography variant="h4">Hi {userName}</Typography>
+          <Typography variant="h4">
+            {t('userHistory.hi', { name: userName })}
+          </Typography>
           <Typography variant="h5" color="text.subtitle">
-            Here you can find out history of all submissions you made
+            {t('userHistory.pageInfo')}
           </Typography>
           {!isEmpty(error) ? (
             <Alert severity="error">{error}</Alert>
@@ -134,7 +138,7 @@ function UserHistory() {
                           color="text.subtitle"
                           display={{ xs: 'none', sm: 'block' }}
                         >
-                          Mark: {mark}
+                          {t('userHistory.marks', { marks: mark })}
                         </Typography>
                         <Typography
                           variant="h6"
@@ -161,7 +165,7 @@ function UserHistory() {
                           handleCheckRank(rollNumber);
                         }}
                       >
-                        Check Rank
+                        {t('userHistory.checkRank')}
                       </Button>
                       <Button
                         size="large"
@@ -170,7 +174,7 @@ function UserHistory() {
                           handleCheckResult({ url });
                         }}
                       >
-                        Result
+                        {t('userHistory.result')}
                       </Button>
                     </Box>
                   </StyledCard>
@@ -181,13 +185,13 @@ function UserHistory() {
         </Card>
       </Container>
       <Dialog fullWidth open={openRank} maxWidth="sm">
-        <DialogTitle>Predicted Ranks</DialogTitle>
+        <DialogTitle>{t('userHistory.predictedRanks')}</DialogTitle>
         <DialogContent>
           <Rank rollNumber={rollNo} />
         </DialogContent>
         <DialogActions disableSpacing>
           <Button size="large" variant="contained" onClick={handleClose}>
-            Close
+            {t('userHistory.close')}
           </Button>
         </DialogActions>
       </Dialog>

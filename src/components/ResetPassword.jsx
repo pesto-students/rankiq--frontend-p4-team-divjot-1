@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useController, useForm } from 'react-hook-form';
-// @mui
 import { useTranslation } from 'react-i18next';
+// @mui
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
@@ -14,7 +14,6 @@ import Alert from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
 import CircularProgress from '@mui/material/CircularProgress';
 // redux and services
-// import { isEmpty } from 'lodash';
 import { REGEX } from '../constants';
 import { SERVER_BASE_API, USER_API } from '../constants/endpoints';
 
@@ -91,7 +90,7 @@ function ResetPassword() {
     }).then((res) => {
       if (!res.ok || res.status >= 400) {
         setError(true);
-        setErrorMsg('Reset password failed please try again later.');
+        setErrorMsg(t('resetPassword.errors.failed'));
       } else {
         setSuccess(true);
       }
@@ -130,7 +129,8 @@ function ResetPassword() {
                 label={t('resetPassword.newPassword')}
                 type="password"
                 helperText={
-                  newPasswordError?.message ?? 'please enter your new password.'
+                  newPasswordError?.message ??
+                  t('resetPassword.resetPasswordLinkSent')
                 }
                 required
                 fullWidth
@@ -202,7 +202,7 @@ function ResetPassword() {
         autoHideDuration={6000}
         onClose={() => handleClose(true)}
       >
-        <Alert severity="success">Password updated successfully</Alert>
+        <Alert severity="success">{t('resetPassword.passwordUpdated')}</Alert>
       </Snackbar>
     </Container>
   );

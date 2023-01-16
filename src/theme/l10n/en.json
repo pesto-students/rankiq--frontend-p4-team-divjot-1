@@ -6,15 +6,16 @@
 		"logout": "Logout",
 		"login": "Login",
 		"signup": "Sign UP",
-		"dashboard":"Dashboard",
-		"about":"About",
-		"faqs":"FAQs",
-		"history":"User History",
-		"contact":"Contact",
-		"account":"My Account",
-		"required":"This Field is required",
-		"submit":"Submit",
-		"reset":"Reset"
+		"dashboard": "Dashboard",
+		"about": "About",
+		"faqs": "FAQs",
+		"history": "User History",
+		"contact": "Contact",
+		"account": "My Account",
+		"required": "This Field is required",
+		"submit": "Submit",
+		"reset": "Reset",
+		"cancel": "Cancel"
 	},
 	"appBar": {
 		"home": "HOME",
@@ -25,36 +26,65 @@
 		"hi": "हिंदी",
 		"en": "English"
 	},
-	"dashboard":{
-		"rrcGroupD":"RRC Group D",
-		"answerUrl":"AnswerSheet Url",
-		"category":"Category",
-		"reservation":"Reservation",
-		"zone":"Zone"
+	"footer": {
+		"rights": "All rights reserved",
+		"support": "Support",
+		"privacy": "Privacy",
+		"FAQs": "FAQs"
 	},
-	"login":{
-		"email":"Email Id",
-		"password":"Password",
-		"notOnRankiq":"Not on RankIQ yet ?",
-		"signup":"Sign Up",
-		"or":"OR",
-		"guest":"Continue as Guest",
+	"dashboard": {
+		"rrcGroupD": "RRC Group D",
+		"answerUrl": "AnswerSheet Url",
+		"category": "Category",
+		"reservation": "Reservation",
+		"zone": "Zone"
+	},
+	"dashboardInfo": {
+		"title": "What is RankIQ?",
+		"subTitle": "RankIQ is an automated program built to calculate marks from response sheets of students and show them real time rank depending on number of students participated.",
+		"features": "Features",
+		"featureList": {
+			"rank": "Rank",
+			"rankSubtitle": "Relatime all India rank, Category Rank and Shiftwise Rank.",
+			"performance": "Performance",
+			"performanceSubtitle": "Sectional performance, total attempted, correct & incorrect.",
+			"normalisation": "Normalisation",
+			"normalisationSubtitle": "Predicts normalised score in case of multiple shifts."
+		}
+	},
+	"login": {
+		"email": "Email Id",
+		"password": "Password",
+		"notOnRankiq": "Not on RankIQ yet ?",
+		"signup": "Sign Up",
+		"or": "OR",
+		"guest": "Continue as Guest",
 		"resetPassword": "Forgot Password"
 	},
-	"signup":{
-		"email":"Email Id",
-		"password":"Password",
-		"cpassword":"Confirm Password",
-		"fname":"First Name",
-		"lname":"Last Name",
-		"already":"Already signed up ? ",
-		"login":"Login",
-		"guest":"Continue as Guest"
+	"signup": {
+		"email": "Email Id",
+		"password": "Password",
+		"cpassword": "Confirm Password",
+		"fname": "First Name",
+		"lname": "Last Name",
+		"already": "Already signed up ? ",
+		"login": "Login",
+		"guest": "Continue as Guest"
 	},
 	"resetPassword": {
+		"title": "Reset Password",
+		"subtitle": "Please eneter your registred email address",
 		"newPassword": "New Password",
 		"confirmPassword": "Confirm Password",
-		"updatePassword": "Update Password"
+		"updatePassword": "Update Password",
+		"resetPasswordLinkSent": "Reset password link sent.",
+		"newPasswordReq": "please enter your new password.",
+		"passwordUpdated": "Password updated successfully",
+		"errors": {
+			"noAccountFound": "No account found linked to this email. Please sign up",
+			"sendResetLink": "Error occured while sending reset password link. Please try again later.",
+			"failed": "Reset password failed please try again later."
+		}
 	},
 	"contactUs": {
 		"pageTitle": "Contact Us",
@@ -86,64 +116,70 @@
 			"ans": "Normalization score is calculated in case of multiple shifts. Calculation varies as per exam conducting authority. Whichever is the exam, normalization score is calculated as per the formula given by exam conducting authority."
 		}
 	],
-	"errors":{
-		"email":"Invalid Email",
-		"password":"min 6 char with combination of letter,number and special char needed",
-		"required":"This field is required",
-		"cpassword":"Passwords do not match"
+	"errors": {
+		"email": "Invalid Email",
+		"password": "min 6 char with combination of letter,number and special char needed",
+		"required": "This field is required",
+		"cpassword": "Passwords do not match"
 	},
-	"exam":{
-		"rrb":{
-			"none":"None",
-			"allahabad":"North Central Railway (Allahabad)",
-			"delhi":"Northern Railway (New Delhi)",
-			"gorakhpur":"North Eastern Railway (Gorakhpur)",
-			"jaipur":"North Western Railway (Jaipur)",
-			"jabalpur":"West Central Railway (Jabalpur)",
-			"wmumbai":"Western Railway (Mumbai)",
-			"cmumbai":"Central Railway (Mumbai)",
-			"sekolkata":"South Eastern Railway (Kolkata)",
-			"ekolkata":"Eastern Railway (Kolkata)",
-			"bilaspur":"South East Central Railway (Bilaspur)",
-			"hubli":"South Western Railway (Hubli)",
-			"chennai":"Southern Railway (Chennai)",
-			"hyd":"South Central Railway (Secunderabad)",
-			"guvhati":"North East Frontier Railway (Guwahati)",
-			"hajipur":"East Central Railway (Hajipur)",
-			"bhuvaneshwar":"East Coast Railway (Bhubanewar)"
+	"exam": {
+		"rrb": {
+			"none": "None",
+			"allahabad": "North Central Railway (Allahabad)",
+			"delhi": "Northern Railway (New Delhi)",
+			"gorakhpur": "North Eastern Railway (Gorakhpur)",
+			"jaipur": "North Western Railway (Jaipur)",
+			"jabalpur": "West Central Railway (Jabalpur)",
+			"wmumbai": "Western Railway (Mumbai)",
+			"cmumbai": "Central Railway (Mumbai)",
+			"sekolkata": "South Eastern Railway (Kolkata)",
+			"ekolkata": "Eastern Railway (Kolkata)",
+			"bilaspur": "South East Central Railway (Bilaspur)",
+			"hubli": "South Western Railway (Hubli)",
+			"chennai": "Southern Railway (Chennai)",
+			"hyd": "South Central Railway (Secunderabad)",
+			"guvhati": "North East Frontier Railway (Guwahati)",
+			"hajipur": "East Central Railway (Hajipur)",
+			"bhuvaneshwar": "East Coast Railway (Bhubanewar)"
 		},
-		"category":{
-			"open":"Un Reserved/Open",
-			"obc":"Other Backward Class",
-			"ews":"Economically Weaker Section",
-			"sc":"Scheduled Caste",
-			"st":"Scheduled Tribe"
+		"category": {
+			"open": "Un Reserved/Open",
+			"obc": "Other Backward Class",
+			"ews": "Economically Weaker Section",
+			"sc": "Scheduled Caste",
+			"st": "Scheduled Tribe"
 		},
-		"reservation":{
-			"none":"None",
-			"ccaa":"CCAA",
-			"oh":"OH",
-			"vh":"VH",
-			"exsm":"ExSM"
+		"reservation": {
+			"none": "None",
+			"ccaa": "CCAA",
+			"oh": "OH",
+			"vh": "VH",
+			"exsm": "ExSM"
 		}
-
 	},
-	"result":{
-		"marks":"Marks Obtained",
-		"total":"Total Marks",
-		"negative":"Negative Marks",
-		"correct":"Correct",
-		"unanswered":"Unanswered",
-		"incorrect":"Incorrect",
-		"subject":"Subject",
-		"center":"Center",
-		"examDate":"Exam Date",
-		"time":"Time",
-		"checkRank":"Check Rank",
-		"other":"Other Details",
-		"predicted":"Predicted Ranks",
-		"close":"Close"
+	"result": {
+		"marks": "Marks Obtained",
+		"total": "Total Marks",
+		"negative": "Negative Marks",
+		"correct": "Correct",
+		"unanswered": "Unanswered",
+		"incorrect": "Incorrect",
+		"subject": "Subject",
+		"center": "Center",
+		"examDate": "Exam Date",
+		"time": "Time",
+		"checkRank": "Check Rank",
+		"other": "Other Details",
+		"predicted": "Predicted Ranks",
+		"close": "Close"
+	},
+	"userHistory": {
+		"pageInfo": "Here you can find out history of all submissions you made",
+		"hi": "Hi {name}",
+		"checkRank": "Check Rank",
+		"predictedRanks": "Predicted Ranks",
+		"close": "Close",
+		"result": "Result",
+		"marks": "Marks: {marks}"
 	}
-
 }
-
