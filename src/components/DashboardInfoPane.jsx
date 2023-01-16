@@ -1,4 +1,4 @@
-// import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 // @mui
 import Avatar from '@mui/material/Avatar';
 import Card from '@mui/material/Card';
@@ -11,11 +11,12 @@ import QueryStatsIcon from '@mui/icons-material/QueryStats';
 import FormatAlignLeftIcon from '@mui/icons-material/FormatAlignLeft';
 
 function DashboardInfoPane() {
-  // const { t } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <Card
       sx={{
+        minHeight: '457px',
         padding: { xs: '2rem 1rem', sm: '2rem' },
         mt: '1rem',
         mb: { xs: '1rem', sm: '3rem' },
@@ -24,14 +25,12 @@ function DashboardInfoPane() {
       <Grid container mb={3} spacing={2}>
         <Grid item xs={12}>
           <Typography variant="h4" textAlign="center">
-            What is RankIQ?
+            {t('dashboardInfo.title')}
           </Typography>
         </Grid>
         <Grid item xs={12}>
           <Typography variant="subtitle1" fontSize="18px" textAlign="center">
-            RankiQ is an automated program built to calculate marks from
-            response sheets of students and show them realtime rank depending on
-            the number of students participated.
+            {t('dashboardInfo.subTitle')}
           </Typography>
         </Grid>
       </Grid>
@@ -47,7 +46,7 @@ function DashboardInfoPane() {
           variant="h5"
           textAlign="center"
         >
-          Features
+          {t('dashboardInfo.features')}
         </Typography>
       </Grid>
       <Grid container spacing={2}>
@@ -68,13 +67,13 @@ function DashboardInfoPane() {
               }
               title={
                 <Typography variant="h5" fontSize="18px">
-                  Ranks
+                  {t('dashboardInfo.featureList.rank')}
                 </Typography>
               }
             />
             <CardContent>
               <Typography fontSize="16px" color="text.secondary">
-                Relatime all India rank, Category Rank and Shiftwise Rank.
+                {t('dashboardInfo.featureList.rankSubtitle')}
               </Typography>
             </CardContent>
           </Card>
@@ -96,13 +95,13 @@ function DashboardInfoPane() {
               }
               title={
                 <Typography variant="h5" fontSize="18px">
-                  Performance
+                  {t('dashboardInfo.featureList.performance')}
                 </Typography>
               }
             />
             <CardContent>
               <Typography fontSize="16px" color="text.secondary">
-                Sectional performance, total attempted, correct & incorrect.
+                {t('dashboardInfo.featureList.performanceSubtitle')}
               </Typography>
             </CardContent>
           </Card>
@@ -124,13 +123,13 @@ function DashboardInfoPane() {
               }
               title={
                 <Typography variant="h5" fontSize="18px">
-                  Normalisation
+                  {t('dashboardInfo.featureList.normalisation')}
                 </Typography>
               }
             />
             <CardContent>
               <Typography fontSize="16px" color="text.secondary">
-                Predicts normalised score in case of multiple shifts.
+                {t('dashboardInfo.featureList.normalisationSubtitle')}
               </Typography>
             </CardContent>
           </Card>

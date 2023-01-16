@@ -59,11 +59,9 @@ function ResetPasswordDialog({ open, handleClose }) {
     }).then((res) => {
       if (!res.ok || res.status >= 400) {
         if (res.status === 404) {
-          setErrorMsg('No account found linked to this email. Please sign up');
+          setErrorMsg(t('resetPassword.errors.noAccountFound'));
         } else {
-          setErrorMsg(
-            'Error occured while sending reset password link. Please try again later.'
-          );
+          setErrorMsg(t('resetPassword.errors.sendResetLink'));
         }
         setError(true);
       } else {
@@ -77,11 +75,9 @@ function ResetPasswordDialog({ open, handleClose }) {
   return (
     <>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Reset Password</DialogTitle>
+        <DialogTitle>{t('resetPassword.title')}</DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            Please eneter your registred email address
-          </DialogContentText>
+          <DialogContentText>{t('resetPassword.subtitle')}</DialogContentText>
           <form>
             <TextField
               {...userNameProps}
@@ -98,12 +94,12 @@ function ResetPasswordDialog({ open, handleClose }) {
           </form>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleClose}>{t('generic.cancel')}</Button>
           <Button
             disabled={invalid || getValues('email') === '' || loading}
             onClick={handleResetSubmit}
           >
-            {loading ? <CircularProgress size={20} /> : 'Submit'}
+            {loading ? <CircularProgress size={20} /> : t('generic.submit')}
           </Button>
         </DialogActions>
       </Dialog>
@@ -128,7 +124,9 @@ function ResetPasswordDialog({ open, handleClose }) {
         autoHideDuration={6000}
         onClose={() => setSuccess(false)}
       >
-        <Alert severity="success">Reset password link sent.</Alert>
+        <Alert severity="success">
+          {t('resetPassword.resetPasswordLinkSent')}
+        </Alert>
       </Snackbar>
     </>
   );
