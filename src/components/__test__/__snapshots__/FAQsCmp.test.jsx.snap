@@ -1,0 +1,64 @@
+// Vitest Snapshot v1
+
+exports[`FAQsCmp.jsx > should render without any errors 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
+  >
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-1qp5vf1-MuiPaper-root"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-eqynpf-MuiTypography-root"
+      >
+        Why my rank is changing each time I refresh the page?
+      </p>
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-7zf3oe-MuiTypography-root"
+      >
+        The Rank iQ gives you a real-time analysis of your Rank which keeps getting updated as the number of students using this predictor keeps getting increased. So students are advised to check their ranks again after a certain time interval to know their updated rank.
+      </p>
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-eqynpf-MuiTypography-root"
+      >
+        What happens if the marks are same for multiple students? How rank is calculated?
+      </p>
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-7zf3oe-MuiTypography-root"
+      >
+        Let’s say topper has 127 marks, so his rank is 1. Now, there are three students with 126 marks, then all of them will see their rank as 2. The student with 125 marks will see his rank as 1+3+1=5.
+      </p>
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-eqynpf-MuiTypography-root"
+      >
+        Do the total number of students increase after old student rechecking with the same URL?
+      </p>
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-7zf3oe-MuiTypography-root"
+      >
+        Each student is given a unique Id to avoid any duplication. Hence, even if you check the marks with response sheet multiple times, total students don’t change.
+      </p>
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-eqynpf-MuiTypography-root"
+      >
+        The total number of student shown on rank page is for a particular branch or overall students?
+      </p>
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-7zf3oe-MuiTypography-root"
+      >
+        The number of student shown on rank page is for particular branch or subjects.
+      </p>
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-eqynpf-MuiTypography-root"
+      >
+        How Normalization score is calculated?
+      </p>
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-7zf3oe-MuiTypography-root"
+      >
+        Normalization score is calculated in case of multiple shifts. Calculation varies as per exam conducting authority. Whichever is the exam, normalization score is calculated as per the formula given by exam conducting authority.
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;

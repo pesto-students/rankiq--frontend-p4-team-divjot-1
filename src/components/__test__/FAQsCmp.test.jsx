@@ -8,6 +8,7 @@ import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import FAQsCmp from '../FAQsCmp';
 import theme from '../../theme/theme';
+import '../../services/i18n';
 
 const mockStore = configureStore([thunk]);
 const navigate = vi.fn();
