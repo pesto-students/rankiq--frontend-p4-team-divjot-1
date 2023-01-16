@@ -177,6 +177,30 @@
 		"predicted":"अनुमानित रैंक",
 		"close":"बंद करना"
 	},
+	"rank": {
+		"overall": {
+			"label": "समग्र रैंक:-",
+			"content": "{total} में से {rank}"
+		},
+		"zone": {
+			"label": "जोन (क्षेत्र):-",
+			"content": "${total} में से ${rank}"
+		},
+		"zoneCategory": {
+			"label": "जोन (क्षेत्र) + केटेगरी:-",
+			"content": "${total} में से ${rank}"
+		},
+		"zoneShift": {
+			"label": "जोन (क्षेत्र) + शिफ्ट:-",
+			"content": "${total} में से ${rank}"
+		},
+		"zoneShiftCategory": {
+			"label": "जोन (क्षेत्र) + शिफ्ट + केटेगरी:-",
+			"content": "${total} में से ${rank}"
+		},
+		"rawMarks": "Raw Marks:-",
+		"zoneSelected": "Zone Selected:-"
+	},
 	"userHistory": {
 		"pageInfo": "यहां आप अपने द्वारा किए गए सभी सबमिशन का इतिहास पता कर सकते हैं",
 		"hi": "हैलो {name}",

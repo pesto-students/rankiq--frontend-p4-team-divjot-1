@@ -177,6 +177,30 @@
 		"predicted": "Predicted Ranks",
 		"close": "Close"
 	},
+	"rank": {
+		"overall": {
+			"label": "Overall:-",
+			"content": "{rank} out of {total}"
+		},
+		"zone": {
+			"label": "Zone:-",
+			"content": "${rank} out of ${total}"
+		},
+		"zoneCategory": {
+			"label": "Zone + Category:-",
+			"content": "${rank} out of ${total}"
+		},
+		"zoneShift": {
+			"label": "Zone + Shift:-",
+			"content": "${rank} out of ${total}"
+		},
+		"zoneShiftCategory": {
+			"label": "Zone + Shift + Category:-",
+			"content": "${rank} out of ${total}"
+		},
+		"rawMarks": "Raw Marks:-",
+		"zoneSelected": "Zone Selected:-"
+	},
 	"userHistory": {
 		"pageInfo": "Here you can find out history of all submissions you made",
 		"hi": "Hi {name}",
