@@ -10,10 +10,11 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 // services
 import { ERROR_MESSAGE } from '../constants';
-
-// send email api;
+import { SERVER_BASE_API, FEEDBACK_API } from '../constants/endpoints';
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.box.main,
@@ -23,36 +24,56 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
 
 function ContactUS() {
   const { t } = useTranslation();
-  const { handleSubmit, getValues, control } = useForm({
+  const { handleSubmit, getValues, control, reset } = useForm({
     mode: 'onChange',
     defaultValues: {
       fName: '',
       lName: '',
       emailId: '',
-      subject: '',
-      feedback: '',
+      sub: '',
+      feedbackMessage: '',
     },
   });
 
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const handleClose = (isSuccess) => {
+    if (isSuccess) {
+      reset();
+      setSuccess(false);
+    } else {
+      setError(false);
+    }
+    setLoading(false);
+  };
 
   const handleSendFeedback = () => {
     setLoading(true);
-    const { fName, lName, emailId, subject, feedback } = getValues();
+    const { fName, lName, emailId, sub, feedbackMessage } = getValues();
 
     const data = {
-      fName,
-      lName,
-      emailId,
-      subject,
-      feedback,
+      firstName: fName,
+      lastName: lName,
+      email: emailId,
+      subject: sub,
+      feedback: feedbackMessage,
     };
 
-    // TODO: Send Mail API
-    setTimeout(() => {
-      console.info(data);
-      setLoading(false);
-    }, 5000);
+    fetch(`${SERVER_BASE_API}${FEEDBACK_API.SEND}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    }).then((res) => {
+      if (!res.ok || res.status >= 400) {
+        setError(true);
+      } else {
+        setSuccess(true);
+      }
+    });
   };
 
   return (
@@ -124,7 +145,7 @@ function ContactUS() {
             </Grid>
             <Grid item xs={12} sm={12} md={12}>
               <Controller
-                name="subject"
+                name="sub"
                 control={control}
                 rules={{ required: ERROR_MESSAGE.REQUIRED }}
                 render={({
@@ -143,7 +164,7 @@ function ContactUS() {
             </Grid>
             <Grid item xs={12} sm={12} md={12}>
               <Controller
-                name="feedback"
+                name="feedbackMessage"
                 control={control}
                 rules={{ required: ERROR_MESSAGE.REQUIRED }}
                 render={({
@@ -181,6 +202,30 @@ function ContactUS() {
           </Grid>
         </form>
       </StyledPaper>
+      <Snackbar
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'center',
+        }}
+        open={error}
+        autoHideDuration={6000}
+        onClose={() => handleClose(false)}
+      >
+        <Alert severity="error">
+          Could not send feedback. Please try again
+        </Alert>
+      </Snackbar>
+      <Snackbar
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'center',
+        }}
+        open={success}
+        autoHideDuration={6000}
+        onClose={() => handleClose(true)}
+      >
+        <Alert severity="success">Fedback sent successfully</Alert>
+      </Snackbar>
     </Container>
   );
 }
