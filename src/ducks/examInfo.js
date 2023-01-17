@@ -59,6 +59,8 @@ export const saveExamData = createAsyncThunk(
       }
     }
 
+    examData.url = examUrl;
+
     return examData;
   }
 );

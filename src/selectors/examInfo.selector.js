@@ -17,6 +17,10 @@ export const primaryDetailsSelector = createSelector(examDataSelector, (data) =>
   get(data, 'primaryDetails', {})
 );
 
+export const answeKeyUrlSelector = createSelector(examDataSelector, (data) =>
+  get(data, 'url', '')
+);
+
 export const getUserInitialsSelector = createSelector(
   primaryDetailsSelector,
   (primaryDetails) => {

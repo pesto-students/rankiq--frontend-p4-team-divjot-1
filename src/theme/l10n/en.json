@@ -173,6 +173,7 @@
 		"examDate": "Exam Date",
 		"time": "Time",
 		"checkRank": "Check Rank",
+		"answerKey":"Answersheet",
 		"other": "Other Details",
 		"predicted": "Predicted Ranks",
 		"close": "Close"
