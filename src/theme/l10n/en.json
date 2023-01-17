@@ -105,7 +105,7 @@
 		},
 		{
 			"que": "What happens if the marks are same for multiple students? How rank is calculated?",
-			"ans": "Let’s say topper has 127 marks, so his rank is 1. Now, there are three students with 126 marks, then all of them will see their rank as 2. The student with 125 marks will see his rank as 1+3+1=5."
+			"ans": "Let’s say topper has 127 marks, so his rank is 1. Now, there are three students with 126 marks, then all of them will see their rank as 2. The student with 125 marks will see his rank as 3."
 		},
 		{
 			"que": "Do the total number of students increase after old student rechecking with the same URL?",
@@ -184,19 +184,19 @@
 		},
 		"zone": {
 			"label": "Zone:-",
-			"content": "${rank} out of ${total}"
+			"content": "{rank} out of {total}"
 		},
 		"zoneCategory": {
 			"label": "Zone + Category:-",
-			"content": "${rank} out of ${total}"
+			"content": "{rank} out of {total}"
 		},
 		"zoneShift": {
 			"label": "Zone + Shift:-",
-			"content": "${rank} out of ${total}"
+			"content": "{rank} out of {total}"
 		},
 		"zoneShiftCategory": {
 			"label": "Zone + Shift + Category:-",
-			"content": "${rank} out of ${total}"
+			"content": "{rank} out of {total}"
 		},
 		"rawMarks": "Raw Marks:-",
 		"zoneSelected": "Zone Selected:-"
