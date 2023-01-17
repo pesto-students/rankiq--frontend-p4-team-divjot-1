@@ -290,11 +290,7 @@ function NavBar() {
                   >
                     <Avatar /> {t('generic.history')}
                   </MenuItem>
-                  <MenuItem>
-                    <Avatar /> {t('generic.account')}
-                  </MenuItem>
                   <Divider />
-
                   <MenuItem onClick={handleLogout}>
                     <ListItemIcon>
                       <Logout fontSize="small" />

@@ -23,6 +23,7 @@ import {
   primaryDetailsSelector,
   isExamInfoPresentSelector,
   sectionDetailsSelector,
+  answeKeyUrlSelector,
 } from '../selectors';
 import { MARKING } from '../constants/exam';
 
@@ -82,6 +83,7 @@ function ResultComponent() {
   const isExamInfoPresent = useSelector(isExamInfoPresentSelector);
   const primaryDetails = useSelector(primaryDetailsSelector);
   const userInitials = useSelector(getUserInitialsSelector);
+  const answerKeyUrl = useSelector(answeKeyUrlSelector);
   const { sectionMarks, correctCount, incorrectCount } = useSelector(
     sectionDetailsSelector
   );
@@ -205,6 +207,15 @@ function ResultComponent() {
           <Box sx={{ display: 'flex', justifyContent: 'space-around' }}>
             <Button size="large" variant="contained" onClick={handleCheckRank}>
               {t('result.checkRank')}
+            </Button>
+            <Button
+              size="large"
+              variant="outlined"
+              onClick={() => {
+                window.open(answerKeyUrl, '_blank');
+              }}
+            >
+              {t('result.answerKey')}
             </Button>
           </Box>
         </Card>
