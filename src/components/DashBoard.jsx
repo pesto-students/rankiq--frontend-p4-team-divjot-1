@@ -74,10 +74,10 @@ function DashBoard() {
         spacing={{ xs: 2, md: 3 }}
         columns={{ xs: 4, sm: 4, md: 12 }}
       >
-        <Grid item xs={4} sm={6} md={6} order={{ xs: 2, sm: 1, md: 1 }}>
+        <Grid item xs={4} sm={6} md={6} order={{ xs: 2, sm: 2, md: 1 }}>
           <DashboardInfoPane />
         </Grid>
-        <Grid item xs={4} sm={6} md={6} order={{ xs: 1, sm: 2, md: 2 }}>
+        <Grid item xs={4} sm={6} md={6} order={{ xs: 1, sm: 1, md: 2 }}>
           <Card
             sx={{
               padding: { xs: '2rem 1rem', sm: '2rem' },
