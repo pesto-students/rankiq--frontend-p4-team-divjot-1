@@ -162,6 +162,8 @@
 		}
 	},
 	"result": {
+		"attempt": "attempt",
+		"accuracy": "Accuracy",
 		"marks": "Marks Obtained",
 		"total": "Total Marks",
 		"negative": "Negative Marks",
