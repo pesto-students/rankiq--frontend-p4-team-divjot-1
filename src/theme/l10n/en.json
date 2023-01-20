@@ -162,7 +162,7 @@
 		}
 	},
 	"result": {
-		"attempt": "attempt",
+		"attempt": "Attempt: {count} questions",
 		"accuracy": "Accuracy",
 		"marks": "Marks Obtained",
 		"total": "Total Marks",

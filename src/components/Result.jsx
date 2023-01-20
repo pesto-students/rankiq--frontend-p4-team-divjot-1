@@ -152,7 +152,7 @@ function ResultComponent() {
                 )}%`}
               </Typography>
               <Typography variant="subtitle2" color="text.subtitle">
-                {`${t('result.attempt')}: ${correctCount + incorrectCount}`}
+                {t('result.attempt', { count: correctCount + incorrectCount })}
               </Typography>
             </Box>
             <Chart id="OverAllMarks" val={sectionMarks} maxVal={100} />
@@ -161,27 +161,21 @@ function ResultComponent() {
             <Grid item xs={12} sm={4}>
               <StyledCard>
                 <Typography variant="h5" textAlign="center">
-                  {t('result.correct')}: {correctCount}/
-                  {correctCount + incorrectCount}
+                  {t('result.correct')}: {correctCount}/100
                 </Typography>
-                <Chart
-                  id="correctCount"
-                  val={correctCount}
-                  maxVal={correctCount + incorrectCount}
-                />
+                <Chart id="correctCount" val={correctCount} maxVal={100} />
               </StyledCard>
             </Grid>
             <Grid item xs={12} sm={4}>
               <StyledCard>
                 <Typography variant="h5" textAlign="center">
-                  {t('result.incorrect')}: {incorrectCount}/
-                  {correctCount + incorrectCount}
+                  {t('result.incorrect')}: {incorrectCount}/100
                 </Typography>
                 <Chart
                   id="incorrectCount"
                   negative
                   val={incorrectCount}
-                  maxVal={correctCount + incorrectCount}
+                  maxVal={100}
                 />
               </StyledCard>
             </Grid>
