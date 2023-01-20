@@ -162,9 +162,11 @@
 		}
 	},
 	"result": {
+		"attempt": "Attempted Questions: {count}",
+		"accuracy": "Accuracy: {accuracy}%",
 		"marks": "Marks Obtained",
 		"total": "Total Marks",
-		"negative": "Negative Marks",
+		"negative": "Negative Marks: {marks}",
 		"correct": "Correct",
 		"unanswered": "Unanswered",
 		"incorrect": "Incorrect",
