@@ -11,7 +11,7 @@ This project scaffold was created with [Vite](https://vitejs.dev/guide/).
 
 ## Requirements
 - [NodeJS](https://nodejs.org/en/) (v18.12.1)
-- [npm](https://docs.npmjs.com/try-the-latest-stable-version-of-npm) 8.19.2
+- [npm](https://docs.npmjs.com/try-the-latest-stable-version-of-npm) (8.19.2)
 
 ## Getting Started
 ```
