@@ -39,6 +39,6 @@ npm run build
 
 ## To submit changes to this app
 To submit any changes
-- Please create fork of this project
+- Please create a fork of this project
 - Create a new branch with appropriate name related to change request
 - Raise a pull request
