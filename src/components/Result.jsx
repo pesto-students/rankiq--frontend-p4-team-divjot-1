@@ -142,14 +142,17 @@ function ResultComponent() {
                 {t('result.total')}: {correctCount * MARKING.CORRECT}
               </Typography>
               <Typography variant="subtitle2" color="text.subtitle">
-                {`${t('result.negative')}: ${
-                  Math.round(incorrectCount * MARKING.INCORRECT * 100) / 100
-                }`}
+                {t('result.negative', {
+                  marks:
+                    Math.round(incorrectCount * MARKING.INCORRECT * 100) / 100,
+                })}
               </Typography>
               <Typography variant="subtitle2" color="text.subtitle">
-                {`${t('result.accuracy')}: ${Math.round(
-                  (correctCount * 100) / (correctCount + incorrectCount)
-                )}%`}
+                {t('result.accuracy', {
+                  accuracy: Math.round(
+                    (correctCount * 100) / (correctCount + incorrectCount)
+                  ),
+                })}
               </Typography>
               <Typography variant="subtitle2" color="text.subtitle">
                 {t('result.attempt', { count: correctCount + incorrectCount })}
@@ -161,21 +164,27 @@ function ResultComponent() {
             <Grid item xs={12} sm={4}>
               <StyledCard>
                 <Typography variant="h5" textAlign="center">
-                  {t('result.correct')}: {correctCount}/100
+                  {t('result.correct')}: {correctCount}/
+                  {correctCount + incorrectCount}
                 </Typography>
-                <Chart id="correctCount" val={correctCount} maxVal={100} />
+                <Chart
+                  id="correctCount"
+                  val={correctCount}
+                  maxVal={correctCount + incorrectCount}
+                />
               </StyledCard>
             </Grid>
             <Grid item xs={12} sm={4}>
               <StyledCard>
                 <Typography variant="h5" textAlign="center">
-                  {t('result.incorrect')}: {incorrectCount}/100
+                  {t('result.incorrect')}: {incorrectCount}/
+                  {correctCount + incorrectCount}
                 </Typography>
                 <Chart
                   id="incorrectCount"
                   negative
                   val={incorrectCount}
-                  maxVal={100}
+                  maxVal={correctCount + incorrectCount}
                 />
               </StyledCard>
             </Grid>

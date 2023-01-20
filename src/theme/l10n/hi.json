@@ -163,10 +163,10 @@
 	},
 	"result":{
 		"attempt": "प्रयास: {count} प्रश्न",
-		"accuracy": "सटीकता",
+		"accuracy": "सटीकता: {accuracy}%",
 		"marks":"अंक प्राप्त की",
 		"total":"कुल मार्क",
-		"negative":"नकारात्मक अंक",
+		"negative":"नकारात्मक अंक: {marks}",
 		"correct":"सही जवाब",
 		"unanswered":"बिना जवाब",
 		"incorrect":"ग़लत जवाब",
