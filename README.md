@@ -3,7 +3,8 @@
 RankIQ is an automated program built to calculate marks from response sheets of students and show them real time rank depending on number of students participated.
 
 ## Demo
-App is currently deployed at [RankIQ Dev](https://rankiq.netlify.app/login).
+- App is currently deployed at [RankIQ Dev](https://rankiq.netlify.app/login).
+- [RankIQ - App usage guide video](https://www.loom.com/share/0678fc8a7b2c44aaab24162074682a91)
 
 ## Project Scaffold
 This project scaffold was created with [Vite](https://vitejs.dev/guide/).
