@@ -56,7 +56,7 @@ function Login() {
   }, [navigate, accessToken, email]);
   const { control, formState, reset, getValues } = useForm({
     mode: 'onBlur',
-    defaultValues: { email: '', password: '' },
+    defaultValues: { email: 'user@pestoproject.com', password: 'pesto@123' },
   });
 
   const {

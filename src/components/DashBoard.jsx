@@ -33,7 +33,17 @@ function DashBoard() {
     control,
   } = useForm({
     mode: 'onChange',
-    defaultValues: { zone: '', reservation: '', category: '', examUrl: '' },
+    defaultValues: {
+      zone: {
+        label: 'North Central Railway (Allahabad)',
+        value: 'North Central Railway (Allahabad)',
+        key: 'allahabad',
+      },
+      reservation: { label: 'CCAA', value: 'CCAA', key: 'ccaa' },
+      category: { label: 'Other Backward Class', value: 'OBC', key: 'obc' },
+      examUrl:
+        'https://dc4-g22.digialm.com//per/g22/pub/32341/touchstone/AssessmentQPHTMLMode1//32341O2230/32341O2230S24D23621/16628815322939738/124194210189066_32341O2230S24D23621E1.html',
+    },
   });
   const navigate = useNavigate();
   const [showError, setShowError] = useState(false);
