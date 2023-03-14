@@ -1,0 +1,216 @@
+{
+	"app": {
+		"test": "hi there, this is en"
+	},
+	"generic": {
+		"logout": "Logout",
+		"login": "Login",
+		"signup": "Sign UP",
+		"dashboard": "Dashboard",
+		"about": "About",
+		"faqs": "FAQs",
+		"history": "User History",
+		"contact": "Contact",
+		"account": "My Account",
+		"required": "This Field is required",
+		"submit": "Submit",
+		"reset": "Reset",
+		"cancel": "Cancel"
+	},
+	"appBar": {
+		"home": "HOME",
+		"about": "ABOUT",
+		"contact": "CONTACT"
+	},
+	"languages": {
+		"hi": "हिंदी",
+		"en": "English"
+	},
+	"footer": {
+		"rights": "All rights reserved",
+		"support": "Support",
+		"privacy": "Privacy",
+		"FAQs": "FAQs"
+	},
+	"dashboard": {
+		"rrcGroupD": "RRC Group D",
+		"answerUrl": "AnswerSheet Url",
+		"category": "Category",
+		"reservation": "Reservation",
+		"zone": "Zone"
+	},
+	"dashboardInfo": {
+		"title": "What is RankIQ?",
+		"subTitle": "RankIQ is an automated program built to calculate marks from response sheets of students and show them real time rank depending on number of students participated.",
+		"features": "Features",
+		"featureList": {
+			"rank": "Rank",
+			"rankSubtitle": "Relatime all India rank, Category Rank and Shiftwise Rank.",
+			"performance": "Performance",
+			"performanceSubtitle": "Sectional performance, total attempted, correct & incorrect.",
+			"normalisation": "Normalisation",
+			"normalisationSubtitle": "Predicts normalised score in case of multiple shifts."
+		}
+	},
+	"login": {
+		"email": "Email Id",
+		"password": "Password",
+		"notOnRankiq": "Not on RankIQ yet ?",
+		"signup": "Sign Up",
+		"or": "OR",
+		"guest": "Continue as Guest",
+		"resetPassword": "Forgot Password"
+	},
+	"signup": {
+		"email": "Email Id",
+		"password": "Password",
+		"cpassword": "Confirm Password",
+		"fname": "First Name",
+		"lname": "Last Name",
+		"already": "Already signed up ? ",
+		"login": "Login",
+		"guest": "Continue as Guest"
+	},
+	"resetPassword": {
+		"title": "Reset Password",
+		"subtitle": "Please eneter your registred email address",
+		"newPassword": "New Password",
+		"confirmPassword": "Confirm Password",
+		"updatePassword": "Update Password",
+		"resetPasswordLinkSent": "Reset password link sent.",
+		"newPasswordReq": "please enter your new password.",
+		"passwordUpdated": "Password updated successfully",
+		"errors": {
+			"noAccountFound": "No account found linked to this email. Please sign up",
+			"sendResetLink": "Error occured while sending reset password link. Please try again later.",
+			"failed": "Reset password failed please try again later."
+		}
+	},
+	"contactUs": {
+		"pageTitle": "Contact Us",
+		"fName": "First Name",
+		"lName": "Last Name",
+		"emailId": "Email Id",
+		"subject": "Subject",
+		"feedback": "Your Message",
+		"alert": {
+			"error": "Could not send feedback. Please try again",
+			"success": "Fedback sent successfully"
+		}
+	},
+	"FAQs": [
+		{
+			"que": "Why my rank is changing each time I refresh the page?",
+			"ans": "The Rank iQ gives you a real-time analysis of your Rank which keeps getting updated as the number of students using this predictor keeps getting increased. So students are advised to check their ranks again after a certain time interval to know their updated rank."
+		},
+		{
+			"que": "What happens if the marks are same for multiple students? How rank is calculated?",
+			"ans": "Let’s say topper has 127 marks, so his rank is 1. Now, there are three students with 126 marks, then all of them will see their rank as 2. The student with 125 marks will see his rank as 3."
+		},
+		{
+			"que": "Do the total number of students increase after old student rechecking with the same URL?",
+			"ans": "Each student is given a unique Id to avoid any duplication. Hence, even if you check the marks with response sheet multiple times, total students don’t change."
+		},
+		{
+			"que": "The total number of student shown on rank page is for a particular branch or overall students?",
+			"ans": "The number of student shown on rank page is for particular branch or subjects."
+		},
+		{
+			"que": "How Normalization score is calculated?",
+			"ans": "Normalization score is calculated in case of multiple shifts. Calculation varies as per exam conducting authority. Whichever is the exam, normalization score is calculated as per the formula given by exam conducting authority."
+		}
+	],
+	"errors": {
+		"email": "Invalid Email",
+		"password": "min 6 char with combination of letter,number and special char needed",
+		"required": "This field is required",
+		"cpassword": "Passwords do not match"
+	},
+	"exam": {
+		"rrb": {
+			"none": "None",
+			"allahabad": "North Central Railway (Allahabad)",
+			"delhi": "Northern Railway (New Delhi)",
+			"gorakhpur": "North Eastern Railway (Gorakhpur)",
+			"jaipur": "North Western Railway (Jaipur)",
+			"jabalpur": "West Central Railway (Jabalpur)",
+			"wmumbai": "Western Railway (Mumbai)",
+			"cmumbai": "Central Railway (Mumbai)",
+			"sekolkata": "South Eastern Railway (Kolkata)",
+			"ekolkata": "Eastern Railway (Kolkata)",
+			"bilaspur": "South East Central Railway (Bilaspur)",
+			"hubli": "South Western Railway (Hubli)",
+			"chennai": "Southern Railway (Chennai)",
+			"hyd": "South Central Railway (Secunderabad)",
+			"guvhati": "North East Frontier Railway (Guwahati)",
+			"hajipur": "East Central Railway (Hajipur)",
+			"bhuvaneshwar": "East Coast Railway (Bhubanewar)"
+		},
+		"category": {
+			"open": "Un Reserved/Open",
+			"obc": "Other Backward Class",
+			"ews": "Economically Weaker Section",
+			"sc": "Scheduled Caste",
+			"st": "Scheduled Tribe"
+		},
+		"reservation": {
+			"none": "None",
+			"ccaa": "CCAA",
+			"oh": "OH",
+			"vh": "VH",
+			"exsm": "ExSM"
+		}
+	},
+	"result": {
+		"attempt": "Attempted Questions: {count}",
+		"accuracy": "Accuracy: {accuracy}%",
+		"marks": "Marks Obtained",
+		"total": "Total Marks",
+		"negative": "Negative Marks: {marks}",
+		"correct": "Correct",
+		"unanswered": "Unanswered",
+		"incorrect": "Incorrect",
+		"subject": "Subject",
+		"center": "Center",
+		"examDate": "Exam Date",
+		"time": "Time",
+		"checkRank": "Check Rank",
+		"answerKey":"Answersheet",
+		"other": "Other Details",
+		"predicted": "Predicted Ranks",
+		"close": "Close"
+	},
+	"rank": {
+		"overall": {
+			"label": "Overall:-",
+			"content": "{rank} out of {total}"
+		},
+		"zone": {
+			"label": "Zone:-",
+			"content": "{rank} out of {total}"
+		},
+		"zoneCategory": {
+			"label": "Zone + Category:-",
+			"content": "{rank} out of {total}"
+		},
+		"zoneShift": {
+			"label": "Zone + Shift:-",
+			"content": "{rank} out of {total}"
+		},
+		"zoneShiftCategory": {
+			"label": "Zone + Shift + Category:-",
+			"content": "{rank} out of {total}"
+		},
+		"rawMarks": "Raw Marks:-",
+		"zoneSelected": "Zone Selected:-"
+	},
+	"userHistory": {
+		"pageInfo": "Here you can find out history of all submissions you made",
+		"hi": "Hi {name}",
+		"checkRank": "Check Rank",
+		"predictedRanks": "Predicted Ranks",
+		"close": "Close",
+		"result": "Result",
+		"marks": "Marks: {marks}"
+	}
+}
